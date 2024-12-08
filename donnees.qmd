@@ -196,7 +196,10 @@ popup89 = paste(
 )
 
 merged89BinsBrevets = c(0, 500, 1000, 2000, 5000, 10000, 100000, 110000)
+merged89BinsOffres = c(0, 10, 50, 100, 500, 1000)
+
 merged89PalPatents = colorBin(palette = "magma", domain = merged89$Total_patents, bins = merged89BinsBrevets, reverse = TRUE)
+merged89PalOffres = colorBin(palette = "viridis", domain = merged89$Total_offres, bins = merged89BinsOffres, reverse = TRUE)
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -206,6 +209,7 @@ library(htmltools)
 
 leaflet() %>%
   addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Carte - standard") %>%
+  addProviderTiles(providers$CartoDB.Positron, group = "Carte - gris") %>%
   addPolygons(data = merged89, color = 'black',
               opacity = 1,
               weight = 0.5,
@@ -226,6 +230,31 @@ leaflet() %>%
             labels = c("<500", "500-1000", "1000-2000", "2000-5000",
                        "5000-10000", "10000-100000", "100000-110000"),
             group = "Nombre de Brevets") %>%
+  
+  addPolygons(data = merged89, color = 'black',
+              opacity = 1,
+              weight = 0.5,
+              fillColor = ~merged89PalOffres(Total_offres),
+              fillOpacity = 0.8,
+              label = lapply(popup89, htmltools::HTML),
+              highlightOptions = highlightOptions(color = "#E2068A",
+                                                  weight = 1.5,
+                                                  bringToFront = TRUE,
+                                                  fillOpacity = 0.5),
+              labelOptions = labelOptions(noHide = F),
+              group = "Nombre d'Offres") %>%
+  
+  addLegend("bottomright", opacity = 1,
+            colors = c("#FDE725FF", "#47C16EFF", "#21908CFF", "#404688FF","#471164FF"),
+            title = "Nombre d'offres d'emploi",
+            labels = c("<10", "10-50", "50-100", "100-500", ">500"),
+            group = "Nombre d'Offres") %>%
+  
+  addLayersControl(
+    baseGroups = c("Carte - standard", "Carte - gris"),
+    overlayGroups = c("Nombre de Brevets", "Nombre d'Offres"),
+    options = layersControlOptions(collapsed = TRUE)
+  ) %>%
   
   setView(lng = 2.80, lat = 46.80, zoom = 5)
 ```
