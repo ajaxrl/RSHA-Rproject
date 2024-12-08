@@ -1,0 +1,235 @@
+---
+title: "Analyse de données"
+---
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: {.justify}
+Cette section est consacrée à l'analyse des données provenant des différentes bases, afin d'explorer les tendances et les liens entre l'innovation, les offres d'emploi et les niveaux de salaire.
+:::
+
+::: {.justify}
+## I) Analyse des Relations entre Innovation, Offres d'Emploi et Valorisation Salariale
+
+#### Figure 1 : Relation entre innovation (nombre de brevets) et rémunération moyenne par entreprise
+:::
+
+::: {.justify}
+Le graphique ci-dessous représente la relation entre le nombre de brevets déposés et le salaire annuel moyen proposés par différentes entreprises ou organisations. Les deux axes utilisent une échelle logarithmique : l'axe horizontal correspond au nombre de brevets, tandis que l'axe vertical montre les salaires annuels moyens en euros.
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+library(ggplot2)
+library(plotly)
+data = read_csv("CSV/base_emp_inno_analysis.csv", show_col_types = FALSE)
+data1 = data[!is.na(data$avg_wage), ]
+
+graph1 = ggplot(data1, aes(
+  x = n_patents,
+  y = avg_wage,
+  color = firm_name,
+  label = firm_name,
+  text = paste0(
+    "<b>Entreprise:</b> ", firm_name,
+    "<br><b>Nombre de brevets:</b> ", n_patents,
+    "<br><b>Salaire annuel moyen:</b> ", avg_wage, " €"
+  )
+)) +
+  geom_point(size = 8, alpha = 0.6) +  # Réduire l'opacité pour rendre les couleurs plus claires
+  geom_text(aes(label = firm_name), color = "#2d3748", size = 4, fontface = "bold", show.legend = FALSE) +  # Placer les noms au dessus des points
+  scale_x_log10() +  # Échelle logarithmique pour l'axe des X
+  scale_y_log10() +  # Échelle logarithmique pour l'axe des Y
+  scale_color_viridis_d(option = "D") +  # Utiliser la palette viridis avec des couleurs plus claires
+  labs(
+    x = "Nombre de brevets (échelle log)",
+    y = "Salaire annuel moyen en € (échelle log)"
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", color = "#2d3748"),
+    axis.title = element_text(face = "bold"),
+    legend.position = "none",
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(color = "gray90", linetype = "dashed")
+  )
+
+interactive_graph1 = ggplotly(graph1, tooltip = "text")
+interactive_graph1
+```
+
+::: {.justify}
+Une observation générale révèle qu'il n'y a pas de corrélation évidente entre le nombre de brevets déposés et le niveau de salaire moyen. Certaines entreprises, comme Michelin, se distinguent par un nombre très élevé de brevets (proche de 10 000), mais affichent des salaires moyens modérés comparés à d'autres entreprises présentes sur le graphique.
+
+À l'inverse, des entités comme Demeter ou GmbH proposent des salaires annuels moyens très élevés (au-dessus de 50 000 euros), malgré un nombre de brevets beaucoup plus faible (moins de 10). Cela suggère que les brevets ne sont pas toujours le principal facteur influençant la rémunération des employés.
+
+Les organisations académiques, telles que l'Université de Montpellier et le CNRS, occupent une position intéressante avec un nombre élevé de brevets (autour de 1 000) et des salaires moyens compétitifs. Cela illustre leur rôle important dans la recherche et l’innovation, tout en offrant une rémunération relativement attractive pour ce type de structure.
+
+En conclusion, ce graphique met en évidence des stratégies variées parmi les entreprises. Certaines priorisent l’innovation mesurée par le nombre de brevets tandis que d’autres mettent davantage l’accent sur la rémunération. Cette diversité souligne l’importance de considérer le contexte spécifique de chaque entreprise, notamment son secteur d’activité, pour comprendre les choix stratégiques qui influencent à la fois les brevets et la rémunération.
+:::
+
+::: {.justify}
+#### Figure 2 : Relation entre innovation (nombre de brevets) et les offres d'emploi proposées par les entreprises
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+library(ggplot2)
+library(plotly)
+
+data = read_csv("CSV/base_emp_inno_analysis.csv", show_col_types = FALSE)
+
+graph2 = ggplot(data, aes(
+  x = n_patents,
+  y = n_offres,
+  color = firm_name,
+  text = paste0(
+    "<b>Entreprise :</b> ", firm_name,
+    "<br><b>Nombre de brevets :</b> ", n_patents,
+    "<br><b>Nombre d'offres d'emploi :</b> ", n_offres
+  )
+)) +
+  geom_point(size = 2, alpha = 0.9, opacity=0.7) +
+  scale_color_viridis_d(option = "D") +
+  scale_x_log10() + 
+  scale_y_log10() +
+  labs(x = "Nombre de brevets (échelle log",
+    y = "Nombre d'offres d'emploi (échelle log)"
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", color = "darkblue"),
+    axis.title = element_text(face = "bold"),
+    legend.position = "none",
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(color = "gray90", linetype = "dashed")
+  )
+
+interactive_graph2 = ggplotly(graph2, tooltip = "text")
+interactive_graph2
+```
+
+::: {.justify}
+Dans le graphique ci-dessus, représentant la relation entre l'innovation, mesurée par le nombre de brevets déposés par les entreprises et le nombre d'offres d'emploi qu'elles proposent, il apparaît qu'il n'y a pas de tendance linéaire évidente ou de relation forte entre ces deux variables. En effet, certains secteurs peuvent être plus orientés vers l'innovation technologique sans pour autant créer un grand nombre de nouveaux postes, tandis que d'autres industries, moins focalisées sur l'innovation, peuvent générer une offre d'emploi plus importante. Cela suggère que, dans l'échantillon étudié, les dépôts de brevets et les offres d'emploi semblent être influencés par des facteurs indépendants. 
+:::
+
+::: {.justify}
+#### Figure 3 : Matrice de corrélation
+:::
+
+::: {.justify}
+La matrice de corrélation suivante illustre les relations entre les principales variables de notre étude : le nombre d'offres d'emploi, le nombre de brevets déposés et le salaire moyen.
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(readr)
+library(corrplot)
+library(dplyr)
+library(ggcorrplot)
+data = read_csv("CSV/base_emp_inno_analysis.csv", show_col_types = FALSE)
+
+data2 = data %>%
+  mutate(Offres = n_offres, Brevets = n_patents, Salaires = avg_wage)
+
+corrplot(
+  cor(data2[, c("Offres", "Brevets", "Salaires")], use = "complete.obs"),
+  method = "number",
+  order = "hclust", 
+  number.cex = 1.2, 
+  tl.cex = 1.2,     
+  tl.col = "#2d3748",
+  tl.srt = 45,       
+  diag = TRUE,       
+  addCoef.col = "#2d3748",
+  number.font = 2,
+  cl.cex = 1.2,           
+  cl.pos = "n"
+)
+```
+
+::: {.justify}
+La matrice de corrélation indique que la relation entre le nombre d'offres d'emploi et le salaire moyen est négativement corrélée à -0,28, suggérant qu'il existe une faible tendance inverse entre ces deux variables. En d'autres termes, une augmentation des offres d'emploi pourrait être associée à une légère baisse des salaires, bien que cette relation soit faible.
+
+De plus, la corrélation entre le nombre de brevets et le salaire moyen est également négative, à -0,36, ce qui suggère qu'une plus grande activité d'innovation dans les entreprises pourrait être liée à des salaires moyens plus faibles. Cependant, cette corrélation reste modérée et indique que d'autres facteurs peuvent influencer cette dynamique.
+:::
+
+------------------------------------------------------------------------
+::: {.justify}
+## II) Carte interactive des brevets et offres d'emploi émis par departement
+:::
+
+::: {.justify}
+## III) Analyse des Compétences Requises au Croisement des Salaires et de l'Innovation
+
+#### Figure 4 : Nuage de mots des compétences requises pondérées par les salaires proposés
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(viridis)
+library(wordcloud)
+library(RColorBrewer)
+
+data = read_csv("CSV/base_emp_inno_analysis.csv", show_col_types = FALSE)
+data5 = data[!is.na(data$top_skill_req), ]
+agg_df = aggregate(n_patents ~ top_skill_req, data = data5, sum)
+
+num_words = length(agg_df$top_skill_req)
+
+colors_palette = colorRampPalette(brewer.pal(9, "Set1"))(num_words)
+
+wordcloud(words = agg_df$top_skill_req,  
+          freq = agg_df$n_patents,       
+          min.freq = 1, 
+          max.words = 100, 
+          random.order = FALSE, 
+          rot.per = 0.25,       
+          scale = c(9, 0.5),    
+          colors = colors_palette,  
+          family = "sans",      
+          ordered.colors = TRUE) 
+```
+
+::: {.justify}
+Ce nuage de mots présente une vue d'ensemble des priorités actuelles des entreprises en matière de recrutement, en mettant en lumière les compétences les plus recherchées et valorisées, notamment en termes de rémunération. Parmi les éléments clés, l’esprit d’équipe, la collaboration, la maîtrise de logiciels tels que Python et Excel, ainsi que la maîtrise de l’anglais, apparaissent comme les principales attentes des employeurs.
+
+Pour les candidats, cette analyse met en lumière la nécessité de combiner des compétences techniques spécifiques, comme la programmation en Python, avec des aptitudes comportementales telles que la collaboration et l’esprit d’équipe, ainsi qu’une maîtrise de l’anglais pour s’adapter à un environnement professionnel globalisé. Se démarquer sur le marché du travail implique donc de développer ce mélange harmonieux de savoir-faire et de savoir-être, devenu indispensable dans le monde professionnel actuel.
+:::
+
+::: {.justify}
+#### Figure 5 : Nuage de mots des compétences requises pondérées par les brevets déposés
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(viridis)
+library(wordcloud)
+library(RColorBrewer)
+data = read_csv("CSV/base_emp_inno_analysis.csv", show_col_types = FALSE)
+data6 = data[!is.na(data$top_skill_req) & !is.na(data$avg_wage), ]
+agg_df = aggregate(avg_wage ~ top_skill_req, data = data6, sum)
+
+colors_palette = colorRampPalette(brewer.pal(9, "Set1"))(length(agg_df$top_skill_req))
+
+wordcloud(words = agg_df$top_skill_req, 
+          freq = agg_df$avg_wage,     
+          min.freq = 1, 
+          max.words = 100, 
+          random.order = FALSE, 
+          rot.per = 0.25,       
+          scale = c(8, 0.5),    
+          colors = colors_palette,  
+          family = "sans",      
+          ordered.colors = TRUE) 
+```
+
+::: {.justify}
+Ce nuage de mots offre une analyse des compétences les plus fréquemment associées au dépôt de brevets, mettant en lumière les aptitudes qui soutiennent l’innovation et la propriété intellectuelle. Les compétences les plus représentées, telles que l'esprit d'équipe et l'autonomie ainsi que la maîtrise du logiciel Excel, de l'anglais, et de l'intelligence artificielle, reflètent les piliers du travail de recherche et développement dans les entreprises.
+
+Bien que moins fréquente dans le nuage, cette compétence associée à l'intelligence artificielle illustre une tendance majeure de l’innovation contemporaine. En effet, l'intelligence artificielle est un domaine en pleine croissance, où le dépôt de brevets est particulièrement dynamique, soulignant son rôle stratégique dans les technologies de demain.
+
+Ce nuage de mots met en lumière un équilibre entre compétences techniques, relationnelles, et comportementales nécessaires à l’innovation. La prééminence de la collaboration au sein d’une équipe, associée à des outils techniques, souligne que l’innovation repose autant sur des interactions collectives que sur des compétences techniques spécifiques. L’anglais et l’intelligence artificielle, quant à eux, traduisent l’enjeu global et technologique des inventions actuelles.
+:::
+

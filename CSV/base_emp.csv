@@ -1,0 +1,697 @@
+"firm_name","n_offres","avg_req_exp","top_skill_req","avg_wage","sector_main","addr_dept_main"
+"1dsolutions",2,NA,"équipe",32900,NA,75
+"1g link consulting",2,NA,"sql",48750,NA,75
+"52 entertainment",7,3,"tableau",NA,NA,NA
+"ab science",2,NA,"programming",NA,NA,75
+"ab tasty",1,NA,"creativity",NA,"Secteur informatique, ESN",75
+"abeille assurances",2,NA,"deep learning",NA,NA,92
+"abil ressources",1,1,"deep learning",50000,"Services aux Entreprises, Secteur informatique, ESN",94
+"aboro",1,NA,"autonome",NA,NA,NA
+"abylsen",5,1,"deep learning",40000,"Secteur informatique, ESN",13
+"accelite",1,NA,"spark",47500,NA,75
+"accenture",60,1,"git",NA,"Secteur informatique, ESN",NA
+"accorcorpo",1,NA,"communication",NA,NA,92
+"acensi",2,7,"équipe",52500,"Services aux Entreprises",33
+"aceo tech",1,NA,"gestion de projets",NA,NA,63
+"acii by audensiel",2,1,"modélisation",37500,"Secteur informatique, ESN",44
+"act on data",1,NA,"azure",NA,NA,92
+"actinvision",2,NA,"programmation",43250,NA,67
+"activus",8,7,"équipe",49899.988,"Secteur informatique, ESN",31
+"adalid",44,NA,"statistique",NA,NA,59
+"adapt rh",1,7,"proactive",75000,"Services aux Entreprises",75
+"adeo",1,NA,"communication",NA,NA,59
+"adequation",1,7,"optimisation",NA,"Services aux Entreprises, Immobilier",NA
+"adherence consulting",2,7,"git",NA,"Secteur informatique, ESN",59
+"adikteev",4,NA,"python",NA,NA,75
+"adoc talent management",1,NA,"résolution de problèmes",NA,"Services aux Entreprises",75
+"adod",1,7,"azure",NA,"Secteur informatique, ESN",69
+"adone conseil",1,NA,"curiosité",70000,NA,75
+"adsearch",15,1,"équipe",54666.6666666667,"Services aux Entreprises",44
+"adway conseil",1,NA,"curiosité",NA,NA,92
+"aerow",1,NA,"power bi",NA,NA,75
+"afdtech",3,7,"python",47500,"Secteur informatique, ESN",59
+"afterdata",1,NA,"créativité",16800,NA,75
+"ag solution",1,NA,"excel",NA,NA,59
+"ag2r la mondiale",3,1,"équipe",NA,NA,75
+"agh consulting",4,7,"équipe",NA,"Industrie high-tech, Telecom",92
+"agorastore",7,NA,"git",NA,NA,NA
+"aia bordeaux",1,NA,"modélisation",NA,NA,33
+"air france",1,NA,"modélisation",NA,NA,95
+"airbus",8,NA,"python",NA,NA,13
+"aircall",2,0,"sql",NA,"Secteur informatique, ESN",75
+"ais",2,NA,"excel",NA,"Secteur informatique, ESN",44
+"aixial",1,NA,"tableau",NA,NA,92
+"aizen recruitment",1,NA,"bases de donnée",NA,NA,75
+"akkion recruitment",1,NA,"statistique",NA,NA,60
+"akkodis",2,1,"équipe",42500,"Secteur informatique, ESN",63
+"algoscope",1,NA,"python",14400,NA,NA
+"alma",1,NA,"english",NA,"Banque, Assurance, Finance",75
+"alpee",3,1,"sql",51666.6666666667,"Secteur Energie, Environnement",74
+"alstom",5,NA,"python",NA,NA,41
+"alteca",7,0,"équipe",52500,"Secteur informatique, ESN",59
+"alteia",1,NA,"deep learning",NA,NA,NA
+"altelios",11,1,"équipe",47722.2222222222,"Secteur informatique, ESN",92
+"alten",48,0,"reporting",NA,NA,92
+"amazon",3,0,"aws",NA,"Média, Internet, Communication",33
+"amiltone",2,7,"sql",39000,"Secteur informatique, ESN",59
+"anderson rh",1,1,"english",NA,"Services aux Entreprises",NA
+"andrice",1,7,"spark",NA,"Services aux Entreprises",69
+"aneo",1,NA,"power bi",15600,NA,92
+"aosis",1,NA,"nlp",50000,NA,92
+"aphp",13,2,"intelligence artificielle",NA,NA,NA
+"apple",1,NA,"deep learning",NA,NA,75
+"april",2,NA,"modélisation",NA,"Banque, Assurance, Finance",69
+"apside",12,5,"équipe",49000,"Secteur informatique, ESN",6
+"aptargroup inc",1,NA,"python",NA,NA,27
+"aquila data enabler",3,NA,"deep learning",NA,NA,92
+"arcom",1,NA,"programmation",NA,NA,75
+"argon & co",1,NA,"deep learning",19800,NA,92
+"arkema",1,NA,"anglais",NA,NA,92
+"arkeon energy",1,NA,"programmation",NA,NA,14
+"armor meca developpement",1,NA,"tableau",35000,NA,22
+"artefact",7,0.3,"git",NA,"Secteur informatique, ESN",75
+"artelia",1,NA,"python",NA,NA,38
+"artelys",7,3,"deep learning",NA,NA,NA
+"artemys agil it (groupe artemys)",1,NA,"spark",32500,NA,79
+"asi",4,7,"git",NA,"Secteur informatique, ESN",69
+"assurances credit mutuel  gie",1,NA,"collaboration",62500,"Banque, Assurance, Finance",67
+"assurant",1,0,"optimisation",NA,"Banque, Assurance, Finance",13
+"astek",33,4.3,"équipe",NA,"Secteur informatique, ESN",75
+"atos",6,1,"équipe",NA,"Secteur informatique, ESN",33
+"aubay",3,1,"équipe",NA,"Secteur informatique, ESN",75
+"auchan retail france",1,NA,"google cloud",NA,NA,59
+"auchan retail international",1,NA,"visualisation de donnée",NA,NA,59
+"audensiel technologies",3,7,"équipe",NA,"Secteur informatique, ESN",33
+"autobiz",1,NA,"deep learning",NA,NA,92
+"automotive cells company   acc",5,3,"database",NA,"Industrie Manufacturière",33
+"avanade",1,NA,"deep learning",NA,NA,75
+"avient",1,NA,"communication skills",NA,NA,1
+"avisia",2,NA,"sql",NA,NA,75
+"axa",22,2,"équipe",15576,"Banque, Assurance, Finance",92
+"axeal",2,0,"équipe",40500,"Services aux Entreprises",69
+"axereal",1,NA,"communication",NA,"Industrie Agro-alimentaire",45
+"axsant",1,NA,"équipe",55000,NA,75
+"ayming",1,NA,"créativité",NA,NA,92
+"azap",2,NA,"anglais",NA,NA,75
+"azura group / disma interational",2,7,"bases de donnée",NA,"Distribution, Commerce de gros",66
+"back market",4,0,"french",NA,"Média, Internet, Communication",75
+"balenciaga",1,NA,"vba",NA,NA,75
+"banque de france",3,NA,"équipe",NA,NA,75
+"banque populaire",2,NA,"sql",NA,NA,13
+"bartle",1,NA,"collaboration",NA,"Services aux Entreprises",75
+"baxter",1,NA,"communication",NA,NA,78
+"bayard",1,NA,"adaptabilité",NA,NA,92
+"bayer",1,NA,"modélisation",NA,NA,69
+"bci",1,NA,"curiosité",NA,NA,NA
+"bd",1,NA,"power bi",NA,NA,38
+"bearingpoint france",3,NA,"équipe",NA,NA,92
+"beezen",2,NA,"tableau",108687.5,NA,92
+"believe",2,7,"python",NA,"Média, Internet, Communication",75
+"bertrandt",4,7,"équipe",NA,"Services aux Entreprises, Industrie Aéronautique, Aérospatial",31
+"betclic group",4,NA,"git",NA,NA,33
+"bforbank",1,NA,"sql",NA,NA,92
+"blue consulting",2,NA,"deep learning",122787.5,NA,75
+"bnp",8,0,"équipe",NA,"Banque, Assurance, Finance",93
+"bollore group",1,NA,"excel",NA,NA,92
+"boston consulting group",2,NA,"python",NA,NA,75
+"botify",2,NA,"collaboration",NA,"Services aux Entreprises",75
+"boulanger",1,7,"reporting",52500,"Distribution, Commerce de gros",59
+"boursorama",2,NA,"python",NA,NA,92
+"bouygues",8,1,"équipe",NA,"BTP",92
+"bpce",18,7,"équipe",NA,NA,75
+"bpgrandouest",1,NA,"bases de donnée",NA,NA,44
+"brainpower",1,NA,"optimisation",NA,"Secteur informatique, ESN",38
+"brgm",5,0,"équipe",NA,NA,NA
+"brittany ferries",1,1,"prévision",NA,"Tourisme, Hôtellerie, Loisirs",29
+"bsport",7,NA,"optimisation",NA,NA,NA
+"bureau veritas",3,0,"communication",NA,"Secteur informatique, ESN",69
+"business & decision",21,7,"équipe",NA,"Secteur informatique, ESN",31
+"but",2,NA,"équipe",NA,"Distribution, Commerce de gros",77
+"cafpi",1,0,"intelligence artificielle",NA,"Banque, Assurance, Finance",64
+"caisse d epargne",4,NA,"sql",NA,NA,33
+"caisse des depots",3,NA,"équipe",NA,NA,75
+"caisse des depots et consignations",1,NA,"prévision",NA,NA,75
+"canal plus",1,7,"python",NA,"Média, Internet, Communication",92
+"capgemini",63,1,"équipe",NA,NA,75
+"capital management fund",2,NA,"deep learning",NA,NA,75
+"cardiologs",2,0,"deep learning",NA,"Secteur informatique, ESN",75
+"carrefour",21,0,"équipe",NA,"Distribution, Commerce de gros",91
+"ccpa group",1,NA,"résolution de problèmes",NA,NA,NA
+"cdiscount",7,1,"équipe",NA,"Distribution, Commerce de gros",33
+"cea",1,NA,"deep learning",NA,NA,91
+"ceb",1,NA,"équipe",78204,NA,75
+"cegid",1,NA,"équipe",47000,NA,69
+"celad",5,7,"python",40000,"Secteur informatique, ESN",92
+"centre hospitalier departemental de vendee",1,NA,"deep learning",NA,NA,85
+"centre hospitalier departemental vendee site de la roche sur yon",1,NA,"deep learning",NA,NA,85
+"cereg territoires",1,NA,"python",29000,NA,44
+"certideal",2,0,"équipe",NA,"Distribution, Commerce de gros",92
+"cgi",68,1.6,"excel",NA,"Secteur informatique, ESN",31
+"chanel",3,NA,"deep learning",NA,NA,75
+"chaps vision",2,NA,"communication",NA,NA,75
+"charli group",1,NA,"spark",NA,NA,92
+"chd vendee   drh",1,NA,"deep learning",NA,NA,85
+"chela+",1,NA,"base de donnée",NA,NA,94
+"cherche susan desesperement",1,NA,"azure",NA,NA,75
+"chr numerique",1,1,"équipe",NA,"Secteur informatique, ESN",29
+"chronopost",1,NA,"python",NA,NA,75
+"chru de brest",1,NA,"deep learning",NA,NA,29
+"ciril group",3,1,"bases de donnée",NA,"Secteur informatique, ESN",13
+"civils de la defense",1,NA,"programmation",NA,NA,75
+"clamae group",1,NA,"azure",NA,NA,75
+"claranet",4,7,"équipe",NA,"Secteur informatique, ESN",59
+"cleeven se",1,NA,"équipe",32500,NA,6
+"clementine",1,NA,"power bi",NA,NA,75
+"cls",1,NA,"deep learning",NA,NA,31
+"cls – collecte localisation satellites",1,0,"deep learning",NA,"Industrie high-tech, Telecom",31
+"cnav",1,NA,"bases de donnée",40500,NA,75
+"cnes   centre national d etudes spatiales",2,NA,"programming",NA,NA,91
+"cnp",6,1,"équipe",NA,"Banque, Assurance, Finance",92
+"cnrs",2,NA,"équipe",34340.16,NA,38
+"coface",7,NA,"database",NA,NA,NA
+"cofidis",2,NA,"équipe",37500,NA,59
+"cognizant",1,NA,"anglais",NA,NA,75
+"colas",1,NA,"statistique",NA,NA,54
+"collins aerospace",1,NA,"équipe",NA,NA,27
+"comptalents",1,NA,"excel",37500,NA,95
+"consept ingenierie",1,7,NA,32500,"Secteur informatique, ESN",35
+"consort group",2,1,"communication",NA,"Secteur informatique, ESN",33
+"consortia",7,NA,"équipe",NA,NA,NA
+"consultancy",7,4,"sql",NA,NA,NA
+"contexte",7,5,"sql",NA,NA,NA
+"continental",2,NA,"power bi",NA,NA,31
+"coperneec",2,NA,"deep learning",NA,NA,75
+"council of europe development bank",1,NA,"excel",NA,NA,75
+"cpam de la marne",1,NA,"bases de donnée",28000,NA,51
+"credit agricole",26,1,"équipe",50000,NA,75
+"criteo",2,NA,"python",NA,"Média, Internet, Communication",75
+"cs",20,7,"python",NA,"Secteur informatique, ESN",75
+"cyllene",28,4,"sql",48750,NA,NA
+"d3s",1,NA,"deep learning",65000,NA,38
+"dalkia",1,NA,"sql",NA,NA,49
+"danem people france",2,NA,"sql",82500,NA,75
+"danone",5,0,"équipe",NA,NA,75
+"darty",7,0,"équipe",NA,"Distribution, Commerce de gros",94
+"dassault",12,NA,"équipe",NA,NA,78
+"data recrutement",46,NA,"python",45000,NA,75
+"datadog",3,NA,"excel",NA,NA,75
+"datafabio",1,NA,"deep learning",NA,NA,94
+"dataiku",1,NA,"python",NA,NA,75
+"datakhi",1,NA,"power bi",45000,NA,59
+"datascientest",17,1,"python",36833.3333333333,NA,NA
+"datawords",1,NA,"optimisation",NA,"Secteur informatique, ESN",92
+"davidson",11,1,"équipe",39812.5,"Secteur informatique, ESN",35
+"davricourt",5,NA,"équipe",NA,"Secteur informatique, ESN",59
+"decideom",1,NA,"programmation",45000,NA,59
+"decilia",1,NA,"programmation",41500,NA,92
+"deezer",3,0,"english",NA,NA,75
+"delaware",2,NA,"tableau",NA,NA,59
+"deloitte",8,0,"statistique",NA,NA,92
+"demeter",2,1,"excel",60000,"Services aux Entreprises",92
+"departement de saone et loire",1,NA,"excel",NA,NA,NA
+"departement du val de marne",1,NA,"anglais",NA,NA,NA
+"descartes",11,0,"excel",NA,"Banque, Assurance, Finance",75
+"devoteam",3,NA,"équipe",NA,"Secteur informatique, ESN",92
+"dgtl performance",2,NA,"english",NA,"Secteur informatique, ESN",78
+"dialonce",1,NA,"deep learning",NA,NA,75
+"diamidex",1,NA,"deep learning",40000,NA,NA
+"digidiz   staff & go",1,NA,"prévision",NA,NA,68
+"digital",10,1,"équipe",42300,"Secteur informatique, ESN",59
+"digiwide",1,NA,"git",NA,NA,33
+"dinum",7,NA,"git",NA,NA,NA
+"dior",2,7,"deep learning",NA,"Industrie Manufacturière",92
+"diot siaci",1,1,"reporting",50000,"Banque, Assurance, Finance",75
+"direction generale de l armement",1,NA,"python",NA,NA,35
+"docaposte",4,1,"deep learning",NA,"Secteur informatique, ESN",69
+"docaret",1,NA,"vba",44000,NA,33
+"doctolib",2,NA,"deep learning",NA,NA,75
+"easy cash",1,NA,"équipe",NA,NA,NA
+"easyvista",2,0,"python",NA,"Secteur informatique, ESN",38
+"edenred",2,NA,"git",NA,"Services aux Entreprises",92
+"edf",5,0,"équipe",NA,"Secteur Energie, Environnement",92
+"edhec business school",1,NA,"intelligence artificielle",NA,NA,59
+"edvance",1,NA,"rigueur",NA,NA,92
+"effi gemy",2,NA,"python",NA,NA,NA
+"egis",1,NA,"anglais",NA,NA,69
+"ekino france",1,NA,"python",NA,NA,93
+"ekkiden",2,NA,"autonôme",NA,"Secteur informatique, ESN",75
+"elap",1,NA,"power bi",NA,NA,75
+"eleclerc",1,NA,"équipe",NA,NA,40
+"elis",1,NA,"anglais",NA,NA,92
+"elsys design",1,NA,"français",NA,NA,35
+"emerton group",3,NA,"azure",NA,NA,75
+"endrix",1,NA,"optimisation",NA,"BEP, CAP, Banque, Assurance, Finance",69
+"enedis",1,NA,"équipe",NA,NA,69
+"engie",11,0,"python",NA,"Secteur Energie, Environnement",92
+"equancy",1,NA,"deep learning",NA,NA,75
+"equans",5,1,"équipe",52500,NA,69
+"equativ",4,NA,"deep learning",NA,NA,75
+"eramet",1,NA,"rigueur",NA,NA,78
+"ergoss",7,NA,"programmation",NA,NA,NA
+"esprit rh",1,1,"optimisation",NA,"Services aux Entreprises",31
+"eureden",1,NA,"autonôme",NA,NA,29
+"euro information",8,NA,"équipe",42062.5,"Banque, Assurance, Finance",67
+"eurofins",2,NA,"excel",NA,"Industrie Pharmaceutique, Biotechn., Chimie",2
+"europcar mobility group",2,NA,"communication",NA,"Transport, Logistique",75
+"european camping group",1,NA,"power bi",30000,NA,34
+"evaneos",13,3,"équipe",NA,NA,NA
+"eviden",5,7,"sql",NA,"Secteur informatique, ESN",33
+"evoteo",25,1,"sql",44380,NA,NA
+"evs professionnel",15,3,"statistique",NA,NA,NA
+"exakis nelite",1,1,"azure",NA,"Secteur informatique, ESN",31
+"excelcio",1,NA,"équipe",NA,NA,75
+"exotec",4,0,"python",NA,"Industrie high-tech, Telecom",59
+"expectra",2,1,"équipe",40000,"Banque, Assurance, Finance",44
+"expleo",10,7,"équipe",NA,"Secteur informatique, ESN",31
+"externatic",2,1,"équipe",45000,"Services aux Entreprises",44
+"externatic recrutement",1,NA,NA,NA,"Services aux Entreprises",44
+"extia",12,NA,"équipe",NA,"Secteur informatique, ESN",34
+"ey",24,7,"équipe",62576.9230769231,"Secteur informatique, ESN",92
+"fabdev",1,NA,"seaborn",NA,NA,75
+"fairly made",1,3,"power bi",NA,NA,NA
+"fareva it apps",2,7,"reporting",NA,"Industrie Manufacturière",26
+"federation française de rugby",1,NA,"modélisation",36400,NA,91
+"fidal",1,0,"équipe",NA,"Secteur informatique, ESN",75
+"fiderim deux savoie",1,1,"tableau",35000,"Services aux Entreprises",74
+"filhet allard",1,NA,"optimisation",NA,NA,NA
+"finance people",1,NA,"équipe",47500,"Services aux Entreprises",78
+"financepeople",1,NA,"python",50000,NA,78
+"findways",1,NA,"équipe",18000,NA,92
+"flyinstinct",1,NA,"statistique",NA,NA,75
+"fondation pour la recherche medicale",1,NA,"curiosité",NA,NA,86
+"foodles",1,NA,"python",NA,NA,92
+"fortuneo",1,NA,"équipe",NA,"Banque, Assurance, Finance",29
+"franfinance",1,NA,"intelligence artificielle",NA,NA,92
+"française des jeux",1,NA,"français",NA,NA,92
+"free",13,0,"équipe",44000,NA,59
+"fretbay",1,NA,"prévision",NA,NA,75
+"frisbee profiling",1,NA,"modélisation",99875,NA,92
+"galec",34,1,"équipe",NA,NA,NA
+"gameloft",2,0,"seaborn",NA,"Secteur informatique, ESN",75
+"gan assurances",1,NA,"dataviz",NA,NA,92
+"gemy automobiles",2,NA,"python",NA,NA,NA
+"generali",8,0,"python",NA,NA,93
+"generation",1,NA,"excel",NA,NA,29
+"geniem",2,NA,"deep learning",111625,NA,59
+"geodis",1,1,"modélisation",NA,"Transport, Logistique",73
+"gerflor",1,NA,"collaboration",NA,NA,69
+"geser best",1,NA,"power bi",33000,NA,33
+"ghu paris psychiatrie et neurosciences",1,NA,"autonôme",NA,NA,75
+"gip pulsy",1,NA,"communication",37500,NA,67
+"gmbh",1,NA,"excel",48500,NA,92
+"grant thornton",1,0,"équipe",NA,"Secteur informatique, ESN",92
+"grant thornton france",3,NA,"sql",NA,NA,92
+"gresb",1,NA,"python",NA,NA,75
+"groupagora",7,0,"équipe",50000,"Secteur informatique, ESN",64
+"groupama",12,1,"équipe",50000,NA,75
+"groupe adp",4,0,"équipe",NA,"Transport, Logistique",94
+"groupe alpha",2,NA,"deep learning",NA,NA,75
+"groupe aptenia",2,NA,"deep learning",120437.5,NA,75
+"groupe beaumanoir (siege)",1,NA,"python",NA,NA,35
+"groupe creative",2,1,"git",45000,"Secteur informatique, ESN",59
+"groupe dubreuil",2,0,"deep learning",NA,"Distribution, Commerce de gros",85
+"groupe kering",4,NA,"english",NA,NA,75
+"groupe le duff",1,NA,"modélisation",NA,NA,35
+"groupe m6",1,NA,"aws",NA,NA,92
+"groupe ogf",2,NA,"sql",56750,"BEP, CAP, Services aux Personnes, Particuliers",13
+"groupe vilavi",1,1,"statistique",NA,"Banque, Assurance, Finance",93
+"groupement d interet public pulsy",1,NA,"communication",NA,NA,67
+"groupement les mousquetaires",4,0,"équipe",21466.6666666667,"Distribution, Commerce de gros",92
+"groupm",1,NA,"bases de donnée",NA,"Média, Internet, Communication",75
+"gueudet",1,NA,"sql",NA,NA,80
+"gueudet 1880",1,NA,NA,NA,"Industrie Auto, Meca, Navale",80
+"hager",1,NA,"statistique",NA,NA,33
+"hardis",7,0,"équipe",NA,"Secteur informatique, ESN",38
+"harmonie mutuelle",1,NA,"communication",NA,NA,35
+"harry hope",3,1,"équipe",46666.6666666667,"Services aux Entreprises",21
+"hauser",1,NA,"git",NA,NA,68
+"havas group",2,7,"excel",NA,"Média, Internet, Communication",92
+"havas media",1,NA,"reporting",NA,NA,75
+"hays",9,1,"équipe",44937.5,"Secteur informatique, ESN",31
+"health data hub",7,NA,"deep learning",NA,NA,NA
+"hello watt",1,0,"rapport",NA,"Secteur Energie, Environnement",75
+"hellofresh",2,1,"python",NA,"Distribution, Commerce de gros",75
+"himydata",2,NA,"sql",49333.03,NA,6
+"hippy sas   indienov",1,NA,"anglais",NA,NA,13
+"hipto",7,NA,"sql",NA,NA,NA
+"hitachi solutions ltd",1,NA,"tableau",NA,NA,75
+"holcim",2,NA,"python",NA,NA,38
+"hopital cavale blanche",1,NA,"deep learning",NA,NA,29
+"hopital national des quinze vingts",2,NA,"collaboration",NA,NA,75
+"hove",7,NA,"rapport",NA,NA,NA
+"hp",1,NA,"statistical modeling",NA,NA,38
+"hr team",3,1,"python",42500,"Secteur informatique, ESN",44
+"hsbc",2,NA,"excel",NA,"Banque, Assurance, Finance",92
+"iadvize",1,NA,"hadoop",NA,NA,44
+"ibm",1,NA,"français",NA,NA,92
+"icm",1,NA,"database",40000,NA,75
+"ikigaï",1,NA,"english",36500,NA,69
+"iliad",3,0,"équipe",NA,"Industrie high-tech, Telecom, Média, Internet, Communication",75
+"imt",1,0,"deep learning",NA,"Enseignement, Formation",59
+"in extenso",2,0,"aws",NA,"Secteur informatique, ESN",75
+"in li",1,NA,"sql",NA,NA,92
+"ineat",2,NA,"power bi",NA,"Secteur informatique, ESN",59
+"ineris",4,1,"french",NA,"Secteur Energie, Environnement",60
+"inetum",31,7,"équipe",NA,"Secteur informatique, ESN",93
+"inex",1,NA,"anglais",13200,NA,93
+"infogene",10,1,"équipe",55875,"Secteur informatique, ESN",92
+"informatis ts",3,NA,"sql",NA,NA,10
+"infotel",4,7,"sql",49000,"Secteur informatique, ESN",29
+"ingeniance",2,NA,"aws",NA,"Secteur informatique, ESN",92
+"innovela",26,2,"spark",61250,NA,NA
+"inpost",1,NA,"reporting",NA,NA,59
+"inrae",1,NA,"modélisation",29900,NA,44
+"inria",3,NA,"python",NA,NA,13
+"insight",1,NA,"anglais",NA,NA,NA
+"insitoo",2,NA,"équipe",NA,NA,59
+"institut du cerveau",1,NA,"communication skills",NA,NA,75
+"institut du cerveau et de la moelle epiniere",1,NA,"version control",NA,NA,75
+"inventing for life",1,NA,"optimisation",NA,"Industrie Pharmaceutique, Biotechn., Chimie",75
+"invivoo",1,NA,"excel",55000,NA,75
+"ipsen",1,NA,"programming",NA,NA,92
+"irt",2,NA,"intelligence artificielle",NA,"Industrie Manufacturière",44
+"it&m stats",1,NA,"autonôme",NA,"Secteur informatique, ESN",75
+"itnovem",1,NA,"git",NA,"Secteur informatique, ESN",93
+"itw",1,NA,"sql",NA,NA,26
+"ivalua",1,NA,"deep learning",NA,NA,91
+"iziwork",3,NA,"excel",44166.6666666667,NA,44
+"jcdecaux",6,0,"équipe",NA,"Média, Internet, Communication, Industrie Manufacturière",92
+"job staging",2,7,"rigueur",NA,"Industrie high-tech, Telecom, Secteur informatique, ESN",56
+"jobmania",1,1,"rapport",12000,"Services aux Entreprises, Média, Internet, Communication",75
+"johnson & johnson",1,NA,"deep learning",NA,NA,92
+"kaino",2,NA,"statistique",65000,NA,75
+"kaino consulting",1,NA,"collaboration",NA,NA,75
+"kanbios",12,2,"anglais",NA,NA,NA
+"karos",7,3,"r studio",50000,NA,NA
+"kaïbee",1,NA,"collaboration",105750,NA,75
+"kelkoo ltd",1,NA,"deep learning",NA,"Secteur informatique, ESN",38
+"kelly services",1,1,"collaboration",NA,"Industrie Pharmaceutique, Biotechn., Chimie",91
+"keolis tours",1,NA,"équipe",NA,NA,37
+"kering",1,NA,"statistics",NA,"Distribution, Commerce de gros",75
+"kicklox",14,NA,"équipe",107687.5,NA,78
+"klarys",1,NA,"deep learning",NA,NA,35
+"klesia",1,NA,"excel",NA,NA,75
+"klint",7,5,"équipe",65000,NA,NA
+"know your people",1,NA,"programmation",42500,NA,59
+"kpmg",15,0,"équipe",NA,NA,92
+"kroissance",1,NA,"sql",40000,NA,31
+"kumo",1,NA,"équipe",9000,NA,92
+"kuribay",1,1,"équipe",NA,"Industrie Auto, Meca, Navale",69
+"kyriba",2,NA,"statistics",NA,"Banque, Assurance, Finance",92
+"l opcommerce",1,NA,"autonôme",44250,NA,75
+"l organisation mondiale de la sante animale (oie)",1,NA,"database",NA,NA,75
+"la banque postale",5,NA,"deep learning",NA,NA,75
+"la belle iloise",1,NA,"reporting",NA,NA,56
+"la poste",7,1,"équipe",NA,"Transport, Logistique",93
+"la releve",7,4,"modélisation",720000,NA,NA
+"la secu recrute",6,NA,"statistique",42550,NA,75
+"lacoste",1,NA,NA,NA,"Distribution, Commerce de gros",75
+"lafayette",2,0,"intelligence artificielle",20966.4,"Distribution, Commerce de gros",75
+"lallemand",1,NA,"programmation",44776.06,NA,15
+"langton howarth",1,NA,"autonomous",NA,NA,75
+"latecoere",1,NA,"sql",NA,NA,31
+"lcl",6,0,"équipe",NA,"Banque, Assurance, Finance",94
+"le bon candidat recrutement",1,NA,"excel",45000,"Services aux Entreprises",94
+"le groupe gcf",1,NA,"excel",NA,NA,67
+"le telegramme",4,1,"collaboration",42500,"Média, Internet, Communication",29
+"lefebvre",1,NA,"statistique",NA,NA,92
+"lehibou",1,NA,"équipe",129250,NA,92
+"lenovo france",1,NA,"git",NA,"Industrie high-tech, Telecom",40
+"lesaffre",3,NA,"deep learning",NA,"Industrie Agro-alimentaire",59
+"lhh recruitment solutions",3,7,"anglais",43000,"Services aux Entreprises",33
+"liberty rider",44,NA,"python",NA,NA,31
+"licorne society",2,NA,"git",NA,NA,75
+"liebherr",2,1,"optimisation",NA,"Industrie Aéronautique, Aérospatial",31
+"limagrain",2,1,"prévision",NA,"Industrie Agro-alimentaire",63
+"lincoln",1,NA,"deep learning",NA,NA,69
+"linkedin job wrapping",1,NA,"statistique",NA,NA,75
+"liquide",8,0,"git",NA,NA,75
+"lity",1,NA,"intelligence artificielle",90000,NA,75
+"livingpackets",21,3,"statistique",41666.6666666667,NA,NA
+"lne",1,NA,"français",NA,NA,75
+"loc maria biscuits",2,7,"collaboration",NA,"Industrie Agro-alimentaire",22
+"louvre hotels",1,NA,"tableau",NA,NA,92
+"lr technologies nord",2,1,"collaboration",42500,"Services aux Entreprises, Secteur informatique, ESN",59
+"lsa courtage",44,NA,"rapport",NA,NA,92
+"lydia",44,NA,"tableau",NA,NA,75
+"lynx rh",1,NA,"git",NA,"Services aux Entreprises",49
+"maestria",2,1,"équipe",46500,"Services aux Entreprises",6
+"magasins vert   point vert",1,0,"git",NA,"Distribution, Commerce de gros",29
+"maif",2,NA,"équipe",NA,NA,79
+"malakoff humanis",4,NA,"rigueur",NA,NA,75
+"malt",1,0,"communication",NA,"Services aux Entreprises",75
+"managing",2,NA,"anglais",NA,"Services aux Entreprises",67
+"mane",2,NA,"programmation",NA,"Industrie Pétrolière, Pétrochimie",6
+"manutan",2,NA,"équipe",NA,"Média, Internet, Communication",95
+"marcel robbez masson",1,NA,"anglais",40200,NA,34
+"margo conseil",1,NA,"deep learning",NA,NA,75
+"maser engineering",2,1,NA,32500,"Services aux Entreprises",31
+"matmut",2,1,"deep learning",NA,"Banque, Assurance, Finance",76
+"mazars",3,7,"équipe",NA,"Secteur informatique, ESN",92
+"mbda",1,NA,"python",NA,NA,18
+"mbr partners",1,NA,"excel",NA,NA,75
+"meetic",1,NA,"deep learning",NA,"Média, Internet, Communication",75
+"meilleurtaux",1,NA,"adaptabilité",NA,"Banque, Assurance, Finance, Média, Internet, Communication",75
+"meritis",3,NA,"équipe",NA,"Secteur informatique, ESN",75
+"meta",2,NA,"deep learning",NA,NA,75
+"metrixx",1,NA,"reporting",NA,NA,69
+"metyis",1,NA,"git",NA,NA,75
+"mfg labs",44,NA,"r studio",NA,NA,77
+"mgen",1,NA,"power bi",NA,NA,75
+"michael page",12,0,"équipe",56450,"Services aux Entreprises",92
+"michelin",5,0,"équipe",16260,NA,63
+"million victories",7,NA,"programming",NA,NA,NA
+"mirakl",6,NA,"deep learning",NA,"Média, Internet, Communication, Secteur informatique, ESN",33
+"mobilize financial services",1,1,"google cloud",NA,"Banque, Assurance, Finance, Industrie Auto, Meca, Navale",93
+"mon marchefr",1,NA,"tableau",NA,NA,69
+"monabanq",1,NA,"sql",10056,NA,59
+"mondial relay",1,7,"tableau",NA,"Transport, Logistique",59
+"morgan philips executive search",2,7,"collaboration",NA,"Industrie Pharmaceutique, Biotechn., Chimie",92
+"mosica",2,1,"spark",NA,"Secteur informatique, ESN",44
+"mp data",38,2.5,"git",51057.3529411765,NA,NA
+"msd",2,NA,"collaboration",NA,NA,75
+"mydral",5,7,"équipe",54875,"Secteur informatique, ESN",75
+"nantes universite",1,NA,"équipe",34002,NA,44
+"natixis sa",2,NA,"collaboration",NA,NA,75
+"nature et decouvertes",1,NA,"optimisation",NA,NA,78
+"nava engineering",1,7,"hadoop",48000,"Industrie Aéronautique, Aérospatial, Secteur informatique, ESN",31
+"neo soft",1,NA,"python",NA,NA,75
+"neoxia",2,NA,"deep learning",NA,"Secteur informatique, ESN",75
+"nestle operational services worldwide sa",3,NA,"équipe",NA,NA,75
+"nexoris",1,NA,"équipe",123375,NA,75
+"nexteam group",1,NA,"équipe",NA,NA,64
+"nexton consulting fr",1,NA,"équipe",NA,NA,59
+"niji",1,NA,"optimisation",NA,NA,69
+"nissan",1,NA,"curious",NA,"Industrie Auto, Meca, Navale",78
+"nodya group",4,7,"équipe",66833.3333333333,"Secteur informatique, ESN",13
+"nova",11,7,"python",NA,NA,NA
+"novencia",4,NA,"git",NA,NA,75
+"novo nordisk",1,NA,"sql",NA,NA,28
+"numberly",4,NA,"sql",NA,"Média, Internet, Communication",75
+"objectware",4,1,"équipe",NA,"Secteur informatique, ESN",44
+"ocde",2,NA,"sql",70263.84,NA,75
+"octo technology",1,NA,"deep learning",NA,NA,75
+"octopus",3,NA,"équipe",NA,NA,75
+"ogf",1,NA,"tensorflow",NA,NA,75
+"okaidi",1,NA,"équipe",44000,NA,59
+"omniciel",2,1,"tableau",44000,"Services aux Entreprises, Secteur informatique, ESN",13
+"onepoint",10,0,"équipe",NA,"Secteur informatique, ESN",75
+"open",2,NA,"git",NA,"Secteur informatique, ESN",92
+"opera conseil",1,NA,"deep learning",NA,NA,69
+"oppbtp",2,7,"bases de donnée",NA,"BTP",92
+"opteamis",1,NA,"git",NA,NA,75
+"orange",7,0,"équipe",NA,"Secteur informatique, ESN",13
+"orano",10,1,"statistique",NA,NA,NA
+"ornikar",1,NA,"modélisation",NA,NA,75
+"ortec",46,0,"équipe",NA,NA,31
+"orthogrid",2,NA,"deep learning",NA,"Secteur informatique, ESN",67
+"ose engineering",7,NA,"programmation",NA,NA,NA
+"otteo",2,1,"équipe",47000,"Secteur informatique, ESN",59
+"ouest france",3,0,"équipe",NA,"Média, Internet, Communication",35
+"ovhcloud",1,NA,"anglais",NA,"Secteur informatique, ESN",59
+"pacific pêche",1,NA,"programmation",NA,NA,34
+"paie & rh solutions",1,NA,"sql",NA,NA,64
+"papernest",46,NA,"français",NA,NA,75
+"paris saclay center for data science",1,NA,"programming",NA,NA,91
+"partnaire",1,7,"optimisation",72500,"Services aux Entreprises",45
+"people way",1,NA,"base de donnée",NA,NA,75
+"pernod",9,NA,"git",NA,NA,75
+"perse beauty",1,NA,"autonome",NA,NA,75
+"persuaders rh",2,7,"équipe",NA,"Services aux Entreprises",92
+"philips",1,NA,"excel",NA,NA,75
+"pictarine",1,NA,"r studio",NA,NA,NA
+"pigment",1,NA,"deep learning",NA,"Secteur informatique, ESN",NA
+"pixie services france",4,7,"python",NA,"Secteur informatique, ESN",59
+"pmu",3,1,"équipe",60000,"Service public des collectivités territoriales",75
+"polarys",2,NA,"équipe",NA,NA,92
+"polyconseil",4,0,"équipe",NA,"Secteur informatique, ESN",75
+"postuler",3,7,"équipe",NA,"Services aux Entreprises",57
+"pricehubble",7,NA,"python",NA,"Immobilier, Secteur informatique, ESN",75
+"pro btp groupe",1,NA,"équipe",45000,NA,94
+"procter & gamble",1,NA,"big data technologies",NA,NA,75
+"profil",9,NA,"équipe",48864.27,NA,75
+"promovacances",1,1,"français",NA,"Restauration, Tourisme, Hôtellerie, Loisirs",75
+"prosol",1,NA,"équipe",NA,NA,69
+"proxiel",3,1,"python",40000,"Secteur informatique, ESN",13
+"psa",4,0,"communication",NA,"Distribution, Commerce de gros",78
+"publicis groupe",1,NA,"collaboration",NA,NA,75
+"publicis sapient",1,NA,"git",NA,"Média, Internet, Communication",75
+"pur",1,NA,"deep learning",NA,NA,75
+"pwc",16,NA,"équipe",NA,"Secteur informatique, ESN",92
+"qare",1,NA,"collaboration",NA,NA,75
+"qima",1,NA,"reporting",NA,NA,NA
+"quadra informatique",1,NA,"communication",NA,NA,67
+"quantilia",1,NA,"collaboration",NA,NA,6
+"quantum",2,NA,"deep learning",NA,NA,34
+"r&s telecom",1,NA,"équipe",NA,NA,75
+"rades",7,3,"curiosité",47500,NA,NA
+"rakam",2,NA,NA,NA,"Services aux Entreprises",92
+"rakuten",1,NA,"deep learning",NA,NA,75
+"rd2 conseil",2,NA,"programmation",NA,NA,69
+"reactis services",3,1,"équipe",50000,"Secteur informatique, ESN",94
+"reconomia",1,NA,"autonome",NA,NA,59
+"recrulab",1,NA,"programmation",50000,NA,69
+"recrutons ensemble",1,NA,"collaboration",NA,NA,13
+"renault",7,NA,"anglais",NA,NA,78
+"repro it",2,7,"équipe",32440,"Distribution, Commerce de gros, Secteur informatique, ESN",59
+"rhodium group",1,NA,"tableau",NA,NA,75
+"roche",1,NA,"autonôme",NA,NA,75
+"roullier",1,0,"équipe",NA,"Industrie Agro-alimentaire",35
+"rsm",2,0,"optimisation",NA,"Banque, Assurance, Finance",44
+"rte international",1,NA,"project management",NA,NA,92
+"ryole",2,0,"tableau",NA,"Industrie Manufacturière, Distribution, Commerce de gros",75
+"saegus",7,4,"excel",54000,NA,NA
+"safilo",1,NA,"tableau",NA,NA,92
+"safran",23,7,"équipe",NA,NA,77
+"saint gobain",2,NA,"collaboration",NA,NA,92
+"saint maclou",2,NA,"reporting",34500,NA,59
+"salomon",2,NA,"anglais",NA,NA,74
+"sanofi",7,NA,"excel",NA,"Industrie Pharmaceutique, Biotechn., Chimie",69
+"sas akerwise",1,NA,"collaboration",102225,NA,75
+"satt sud est",1,NA,"deep learning",35500,NA,13
+"saur",3,1,"deep learning",NA,"Secteur Energie, Environnement",75
+"scalian",2,7,"tableau",40000,"Santé, Social, Association, Secteur informatique, ESN",35
+"scc",1,7,"collaboration",NA,"Secteur informatique, ESN",92
+"schneider",5,NA,"excel",NA,NA,6
+"science me up",1,NA,"python",NA,NA,NA
+"scor",2,NA,"deep learning",NA,NA,75
+"seb",2,0,"excel",NA,"Distribution, Commerce de gros",53
+"segula",4,7,"tableau",NA,"Industrie Auto, Meca, Navale",91
+"sense4data",1,NA,"communication",NA,NA,33
+"sephora",2,NA,"collaboration",NA,NA,45
+"sept lieues",5,7,"équipe",64900,NA,75
+"sercel",1,NA,"rigueur",NA,NA,44
+"serma technologies",1,NA,"anglais",NA,NA,33
+"servier",1,NA,"excel",NA,"Industrie Pharmaceutique, Biotechn., Chimie",92
+"sfr",6,0,"reporting",NA,"Industrie high-tech, Telecom",75
+"shift technology",2,NA,"french",NA,NA,75
+"shippeo",44,NA,"english",NA,NA,75
+"shopopop",1,1,"git",39500,"Services aux Personnes, Particuliers",44
+"shortways",1,NA,"autonome",NA,NA,53
+"showroomprive",1,0,"modélisation",NA,"Média, Internet, Communication",93
+"sia partners",2,NA,"intelligence artificielle",NA,"Services aux Entreprises",75
+"siaci saint honore",2,NA,"deep learning",NA,NA,75
+"siege de l ap hp",1,NA,"rigueur",NA,NA,75
+"sightengine",1,NA,"tensorflow",NA,NA,NA
+"sii",24,7,"équipe",38452.0833333333,"Secteur informatique, ESN",59
+"silamir",1,NA,"rigueur",NA,NA,75
+"silkhom",3,NA,"power bi",46666.6666666667,"Services aux Entreprises",56
+"sim&cure",1,NA,"deep learning",NA,NA,34
+"siplec",1,NA,"tableau",NA,NA,94
+"size up consulting",2,7,"gestion de projets",NA,"Secteur informatique, ESN",75
+"skiils",17,3,"équipe",63208.3333333333,NA,NA
+"smarteo",1,NA,"tensorflow",NA,NA,NA
+"sncf",6,NA,"équipe",NA,NA,75
+"societe generale",7,NA,"équipe",NA,NA,92
+"socomec",1,NA,"c++",NA,NA,67
+"sodebo",1,1,"équipe",NA,"Industrie Agro-alimentaire",85
+"sodexo",44,NA,"excel",NA,NA,92
+"softeam",1,NA,"spark",NA,NA,75
+"sogeti",1,NA,"power bi",NA,NA,31
+"solutec",2,NA,"modélisation",NA,"Secteur informatique, ESN",31
+"somfy",3,NA,"excel",NA,NA,74
+"sopra steria",44,7,"équipe",NA,"Secteur informatique, ESN",NA
+"sorare",1,NA,"sql",NA,NA,75
+"soredab",2,0,"azure",NA,"Industrie Agro-alimentaire",78
+"soyhuce",2,NA,"équipe",NA,NA,75
+"spare parts 3d",1,NA,"python",NA,NA,75
+"sparteo",1,NA,"autonomous",NA,NA,59
+"sqli",1,0,"collaboration",NA,"Secteur informatique, ESN",76
+"stages",3,0,"équipe",15366.6666666667,"Services aux Entreprises",92
+"stalaven",1,NA,"python",NA,NA,22
+"stellantis",8,NA,"équipe",NA,NA,78
+"stereolabs",4,NA,"deep learning",NA,"Secteur informatique, ESN",75
+"streem energy",1,NA,"deep learning",NA,NA,75
+"suez",10,0,"python",NA,NA,78
+"sully group",1,NA,"tableau",NA,NA,38
+"suntory beverage & food france",1,NA,"statistique",65000,NA,92
+"suricate it",1,NA,"deep learning",138650,NA,75
+"symphonyai",1,NA,"deep learning",NA,NA,75
+"synergie",1,NA,"collaboration",NA,NA,59
+"synopsia",1,NA,"python",50000,NA,75
+"systnaps",1,NA,"base de donnée",NA,NA,94
+"talan",46,7,"équipe",NA,"Secteur informatique, ESN",75
+"talenteeds",1,NA,"artificial intelligence",NA,NA,75
+"teads",1,NA,"curious",NA,NA,34
+"team is",1,NA,"sql",67500,NA,75
+"teamis",5,1,"équipe",67500,"Secteur informatique, ESN",33
+"tech riders",44,NA,"équipe",NA,NA,75
+"terrena",1,NA,"bases de donnée",NA,NA,NA
+"tf1",1,NA,"communication",NA,NA,75
+"thales",6,NA,"équipe",NA,NA,92
+"the information lab",1,NA,"équipe",52500,NA,75
+"the product crew",7,NA,"français",NA,NA,NA
+"tortoise",1,NA,"python",NA,"Secteur informatique, ESN",75
+"totalenergies",6,NA,"python",NA,NA,92
+"touton sa",1,NA,"rapport",NA,NA,33
+"trsb",4,7,"anglais",NA,"Média, Internet, Communication, Distribution, Commerce de gros, Secteur informatique, ESN",75
+"tuanis it",2,7,"équipe",NA,"Secteur informatique, ESN",31
+"twenty one talents",2,7,"collaboration",56500,"Industrie high-tech, Telecom, Média, Internet, Communication",75
+"u iris",2,1,"modélisation",45000,"Secteur informatique, ESN",44
+"ubisoft",3,0,"python",NA,"Secteur informatique, ESN",75
+"unibail rodamco westfield",2,NA,"collaboration",NA,"Immobilier",75
+"united solutions",2,1,"équipe",47500,"Secteur informatique, ESN",69
+"universcience",1,NA,"statistique",45500,NA,75
+"universite de montpellier",1,NA,"autonôme",35940,NA,34
+"universite de nantes",1,NA,"rapport",NA,NA,44
+"unlck recrutement",4,0,"aws",52250,"Services aux Entreprises, Secteur informatique, ESN",6
+"uptoo",7,NA,"équipe",56785.7142857143,"Services aux Entreprises",13
+"utigroup",7,7,"équipe",43857.1428571429,"Secteur informatique, ESN",69
+"utwin",1,NA,"tableau",NA,NA,69
+"vaisala",1,NA,"excel",NA,NA,75
+"valeo",4,0,"collaboration",NA,"Industrie Auto, Meca, Navale",95
+"valeuriad",1,NA,"hadoop",NA,NA,44
+"valoway",1,NA,"modélisation",52500,NA,44
+"valtao",1,NA,"excel",NA,NA,95
+"veepee",1,NA,"tableau",NA,NA,75
+"veepee_france",1,NA,"aws",NA,"Distribution, Commerce de gros",75
+"vente 2 site",1,NA,"proactif",NA,NA,94
+"verisure",1,NA,"excel",NA,NA,92
+"vetoquinol",1,NA,"équipe",NA,NA,70
+"viatris",1,NA,"excel",NA,NA,69
+"vif",2,7,"équipe",NA,"Industrie Agro-alimentaire, Secteur informatique, ESN",44
+"vinci",6,NA,"équipe",NA,NA,92
+"visian",9,4,"tableau",124550,NA,NA
+"visuary",1,NA,"proactive",NA,NA,75
+"viveris",5,1,"équipe",45000,"Secteur informatique, ESN",94
+"vo2 group",1,NA,"excel",158625,NA,75
+"volvo",5,NA,"python",NA,NA,69
+"waisso",1,NA,"excel",NA,NA,75
+"walters people",1,1,"équipe",37500,"Distribution, Commerce de gros",95
+"wanteeed",7,4,"équipe",50000,NA,NA
+"warner music france",7,NA,"collaboration",NA,NA,NA
+"wavestone",2,0,"git",NA,"Services aux Entreprises",75
+"we it",1,1,"hadoop",46000,"Média, Internet, Communication, Secteur informatique, ESN",NA
+"wefox",1,NA,"python",NA,NA,75
+"wesmart",1,NA,"modélisation",55000,NA,75
+"wewyse",2,2,"modélisation",NA,"Média, Internet, Communication",75
+"wheel of work",1,NA,"power bi",121025,NA,59
+"withings",4,0,"python",NA,"Distribution, Commerce de gros",92
+"wivoo",16,NA,"azure",NA,NA,NA
+"wizaly",1,NA,"hadoop",NA,NA,75
+"wizville",7,2,"curiosité",50000,NA,NA
+"x fab",44,NA,"communication skills",NA,NA,91
+"xl catlin",1,NA,"database",NA,NA,75
+"xpdeep",1,NA,"deep learning",NA,NA,38
+"zoī",1,NA,"git",NA,NA,75
+NA,688,2.9,"équipe",46087.5,NA,NA

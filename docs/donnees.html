@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Projet R - M1 IREF - Analyse de données</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Projet R - M1 IREF</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./stats.html" rel="" target="">
+ <span class="menu-text">Statistiques descriptives</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./donnees.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Analyse de données</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#i-analyse-des-relations-entre-innovation-offres-demploi-et-valorisation-salariale" id="toc-i-analyse-des-relations-entre-innovation-offres-demploi-et-valorisation-salariale" class="nav-link active" data-scroll-target="#i-analyse-des-relations-entre-innovation-offres-demploi-et-valorisation-salariale">I) Analyse des Relations entre Innovation, Offres d’Emploi et Valorisation Salariale</a></li>
+  <li><a href="#ii-carte-interactive-des-brevets-et-offres-demploi-émis-par-departement" id="toc-ii-carte-interactive-des-brevets-et-offres-demploi-émis-par-departement" class="nav-link" data-scroll-target="#ii-carte-interactive-des-brevets-et-offres-demploi-émis-par-departement">II) Carte interactive des brevets et offres d’emploi émis par departement</a></li>
+  <li><a href="#iii-analyse-des-compétences-requises-au-croisement-des-salaires-et-de-linnovation" id="toc-iii-analyse-des-compétences-requises-au-croisement-des-salaires-et-de-linnovation" class="nav-link" data-scroll-target="#iii-analyse-des-compétences-requises-au-croisement-des-salaires-et-de-linnovation">III) Analyse des Compétences Requises au Croisement des Salaires et de l’Innovation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Analyse de données</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<style type="text/css">
+.justify {
+  text-align: justify !important
+}
+</style>
+</div>
+<div class="justify">
+<p>Cette section est consacrée à l’analyse des données provenant des différentes bases, afin d’explorer les tendances et les liens entre l’innovation, les offres d’emploi et les niveaux de salaire.</p>
+</div>
+<section id="i-analyse-des-relations-entre-innovation-offres-demploi-et-valorisation-salariale" class="level2 justify">
+<h2 class="anchored" data-anchor-id="i-analyse-des-relations-entre-innovation-offres-demploi-et-valorisation-salariale">I) Analyse des Relations entre Innovation, Offres d’Emploi et Valorisation Salariale</h2>
+<section id="figure-1-relation-entre-innovation-nombre-de-brevets-et-rémunération-moyenne-par-entreprise" class="level4">
+<h4 class="anchored" data-anchor-id="figure-1-relation-entre-innovation-nombre-de-brevets-et-rémunération-moyenne-par-entreprise">Figure 1 : Relation entre innovation (nombre de brevets) et rémunération moyenne par entreprise</h4>
+</section>
+</section>
+<div class="justify">
+<p>Le graphique ci-dessous représente la relation entre le nombre de brevets déposés et le salaire annuel moyen proposés par différentes entreprises ou organisations. Les deux axes utilisent une échelle logarithmique : l’axe horizontal correspond au nombre de brevets, tandis que l’axe vertical montre les salaires annuels moyens en euros.</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-961f3618d81947a488c9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-961f3618d81947a488c9">{"x":{"data":[{"x":[1],"y":[4.1924559385119755],"text":"<b>Entreprise:<\/b> axa<br><b>Nombre de brevets:<\/b> 10<br><b>Salaire annuel moyen:<\/b> 15576 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(68,1,84,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(68,1,84,1)"}},"hoveron":"points","name":"axa","legendgroup":"axa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.2648178230095364],"y":[4.5358023143238855],"text":"<b>Entreprise:<\/b> cnrs<br><b>Nombre de brevets:<\/b> 184<br><b>Salaire annuel moyen:<\/b> 34340.16 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,40,120,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,40,120,1)"}},"hoveron":"points","name":"cnrs","legendgroup":"cnrs","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[4.7781512503836439],"text":"<b>Entreprise:<\/b> demeter<br><b>Nombre de brevets:<\/b> 1<br><b>Salaire annuel moyen:<\/b> 60000 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(62,74,137,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(62,74,137,1)"}},"hoveron":"points","name":"demeter","legendgroup":"demeter","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.8129133566428555],"y":[4.6434526764861879],"text":"<b>Entreprise:<\/b> free<br><b>Nombre de brevets:<\/b> 65<br><b>Salaire annuel moyen:<\/b> 44000 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(49,104,142,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(49,104,142,1)"}},"hoveron":"points","name":"free","legendgroup":"free","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[4.685741738602264],"text":"<b>Entreprise:<\/b> gmbh<br><b>Nombre de brevets:<\/b> 1<br><b>Salaire annuel moyen:<\/b> 48500 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(38,130,142,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(38,130,142,1)"}},"hoveron":"points","name":"gmbh","legendgroup":"gmbh","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.8808135922807914],"y":[4.6020599913279625],"text":"<b>Entreprise:<\/b> icm<br><b>Nombre de brevets:<\/b> 76<br><b>Salaire annuel moyen:<\/b> 40000 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(31,158,137,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(31,158,137,1)"}},"hoveron":"points","name":"icm","legendgroup":"icm","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.95424250943932487],"y":[4.1205739312058496],"text":"<b>Entreprise:<\/b> inex<br><b>Nombre de brevets:<\/b> 9<br><b>Salaire annuel moyen:<\/b> 13200 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(53,183,121,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(53,183,121,1)"}},"hoveron":"points","name":"inex","legendgroup":"inex","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.3010299956639812],"y":[4.3215238670722682],"text":"<b>Entreprise:<\/b> lafayette<br><b>Nombre de brevets:<\/b> 2<br><b>Salaire annuel moyen:<\/b> 20966.4 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(109,205,89,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(109,205,89,1)"}},"hoveron":"points","name":"lafayette","legendgroup":"lafayette","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.8559429462323158],"y":[4.2111205412580492],"text":"<b>Entreprise:<\/b> michelin<br><b>Nombre de brevets:<\/b> 7177<br><b>Salaire annuel moyen:<\/b> 16260 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(180,222,44,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(180,222,44,1)"}},"hoveron":"points","name":"michelin","legendgroup":"michelin","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.0115704435972783],"y":[4.5555780727729553],"text":"<b>Entreprise:<\/b> universite de montpellier<br><b>Nombre de brevets:<\/b> 1027<br><b>Salaire annuel moyen:<\/b> 35940 €","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(253,231,37,1)","opacity":0.59999999999999998,"size":30.236220472440948,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(253,231,37,1)"}},"hoveron":"points","name":"universite de montpellier","legendgroup":"universite de montpellier","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2.2648178230095364,0,1.8129133566428555,0,1.8808135922807914,0.95424250943932487,0.3010299956639812,3.8559429462323158,3.0115704435972783],"y":[4.1924559385119755,4.5358023143238855,4.7781512503836439,4.6434526764861879,4.685741738602264,4.6020599913279625,4.1205739312058496,4.3215238670722682,4.2111205412580492,4.5555780727729553],"text":["axa","cnrs","demeter","free","gmbh","icm","inex","lafayette","michelin","universite de montpellier"],"hovertext":["<b>Entreprise:<\/b> axa<br><b>Nombre de brevets:<\/b> 10<br><b>Salaire annuel moyen:<\/b> 15576 €","<b>Entreprise:<\/b> cnrs<br><b>Nombre de brevets:<\/b> 184<br><b>Salaire annuel moyen:<\/b> 34340.16 €","<b>Entreprise:<\/b> demeter<br><b>Nombre de brevets:<\/b> 1<br><b>Salaire annuel moyen:<\/b> 60000 €","<b>Entreprise:<\/b> free<br><b>Nombre de brevets:<\/b> 65<br><b>Salaire annuel moyen:<\/b> 44000 €","<b>Entreprise:<\/b> gmbh<br><b>Nombre de brevets:<\/b> 1<br><b>Salaire annuel moyen:<\/b> 48500 €","<b>Entreprise:<\/b> icm<br><b>Nombre de brevets:<\/b> 76<br><b>Salaire annuel moyen:<\/b> 40000 €","<b>Entreprise:<\/b> inex<br><b>Nombre de brevets:<\/b> 9<br><b>Salaire annuel moyen:<\/b> 13200 €","<b>Entreprise:<\/b> lafayette<br><b>Nombre de brevets:<\/b> 2<br><b>Salaire annuel moyen:<\/b> 20966.4 €","<b>Entreprise:<\/b> michelin<br><b>Nombre de brevets:<\/b> 7177<br><b>Salaire annuel moyen:<\/b> 16260 €","<b>Entreprise:<\/b> universite de montpellier<br><b>Nombre de brevets:<\/b> 1027<br><b>Salaire annuel moyen:<\/b> 35940 €"],"textfont":{"size":15.118110236220474,"color":"rgba(45,55,72,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":25.298464092984645,"r":6.6417600664176026,"b":36.529680365296812,"l":49.813200498132012},"font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835205},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.19279714731161579,4.0487400935439313],"tickmode":"array","ticktext":["1","10","100","1000","10000"],"tickvals":[0,1.0000000000000004,2,3.0000000000000004,4],"categoryorder":"array","categoryarray":["1","10","100","1000","10000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.3208800332088013,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":10.62681610626816},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(229,229,229,1)","gridwidth":0.60379636967432737,"zeroline":false,"anchor":"y","title":{"text":"<b> Nombre de brevets (échelle log) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835205}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[4.0876950652469599,4.8110301163425335],"tickmode":"array","ticktext":["20000","30000","50000"],"tickvals":[4.3010299956639813,4.4771212547196626,4.6989700043360187],"categoryorder":"array","categoryarray":["20000","30000","50000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.3208800332088013,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":10.62681610626816},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(229,229,229,1)","gridwidth":0.60379636967432737,"zeroline":false,"anchor":"x","title":{"text":"<b> Salaire annuel moyen en € (échelle log) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835205}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":10.62681610626816}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"55e3abbafe7":{"x":{},"y":{},"colour":{},"label":{},"text":{},"type":"scatter"},"55e781984d0":{"x":{},"y":{},"colour":{},"label":{},"text":{}}},"cur_data":"55e3abbafe7","visdat":{"55e3abbafe7":["function (y) ","x"],"55e781984d0":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="justify">
+<p>Une observation générale révèle qu’il n’y a pas de corrélation évidente entre le nombre de brevets déposés et le niveau de salaire moyen. Certaines entreprises, comme Michelin, se distinguent par un nombre très élevé de brevets (proche de 10 000), mais affichent des salaires moyens modérés comparés à d’autres entreprises présentes sur le graphique.</p>
+<p>À l’inverse, des entités comme Demeter ou GmbH proposent des salaires annuels moyens très élevés (au-dessus de 50 000 euros), malgré un nombre de brevets beaucoup plus faible (moins de 10). Cela suggère que les brevets ne sont pas toujours le principal facteur influençant la rémunération des employés.</p>
+<p>Les organisations académiques, telles que l’Université de Montpellier et le CNRS, occupent une position intéressante avec un nombre élevé de brevets (autour de 1 000) et des salaires moyens compétitifs. Cela illustre leur rôle important dans la recherche et l’innovation, tout en offrant une rémunération relativement attractive pour ce type de structure.</p>
+<p>En conclusion, ce graphique met en évidence des stratégies variées parmi les entreprises. Certaines priorisent l’innovation mesurée par le nombre de brevets tandis que d’autres mettent davantage l’accent sur la rémunération. Cette diversité souligne l’importance de considérer le contexte spécifique de chaque entreprise, notamment son secteur d’activité, pour comprendre les choix stratégiques qui influencent à la fois les brevets et la rémunération.</p>
+</div>
+<section id="figure-2-relation-entre-innovation-nombre-de-brevets-et-les-offres-demploi-proposées-par-les-entreprises" class="level4 justify">
+<h4 class="anchored" data-anchor-id="figure-2-relation-entre-innovation-nombre-de-brevets-et-les-offres-demploi-proposées-par-les-entreprises">Figure 2 : Relation entre innovation (nombre de brevets) et les offres d’emploi proposées par les entreprises</h4>
+</section>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-8e345bd9b27c9faf3663" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-8e345bd9b27c9faf3663">{"x":{"data":[{"x":[2.0530784434834195],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> ab science<br><b>Nombre de brevets :<\/b> 113<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(68,1,84,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(68,1,84,1)"}},"hoveron":"points","name":"ab science","legendgroup":"ab science","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.3979400086720377],"y":[0],"text":"<b>Entreprise :<\/b> adeo<br><b>Nombre de brevets :<\/b> 25<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(69,4,88,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(69,4,88,1)"}},"hoveron":"points","name":"adeo","legendgroup":"adeo","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.709948016510761],"y":[0.90308998699194354],"text":"<b>Entreprise :<\/b> airbus<br><b>Nombre de brevets :<\/b> 5128<br><b>Nombre d'offres d'emploi :<\/b> 8","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(70,8,92,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(70,8,92,1)"}},"hoveron":"points","name":"airbus","legendgroup":"airbus","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.4771212547196624],"y":[0],"text":"<b>Entreprise :<\/b> alma<br><b>Nombre de brevets :<\/b> 30<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(70,12,95,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(70,12,95,1)"}},"hoveron":"points","name":"alma","legendgroup":"alma","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.3494717992143856],"y":[0.69897000433601886],"text":"<b>Entreprise :<\/b> alstom<br><b>Nombre de brevets :<\/b> 2236<br><b>Nombre d'offres d'emploi :<\/b> 5","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(71,16,99,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(71,16,99,1)"}},"hoveron":"points","name":"alstom","legendgroup":"alstom","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[0],"text":"<b>Entreprise :<\/b> arcom<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(71,19,101,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(71,19,101,1)"}},"hoveron":"points","name":"arcom","legendgroup":"arcom","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.6394864892685859],"y":[0],"text":"<b>Entreprise :<\/b> arkema<br><b>Nombre de brevets :<\/b> 4360<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,23,105,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,23,105,1)"}},"hoveron":"points","name":"arkema","legendgroup":"arkema","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.3010299956639812],"y":[0],"text":"<b>Entreprise :<\/b> artelia<br><b>Nombre de brevets :<\/b> 2<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,26,108,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,26,108,1)"}},"hoveron":"points","name":"artelia","legendgroup":"artelia","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[1.3424226808222062],"text":"<b>Entreprise :<\/b> axa<br><b>Nombre de brevets :<\/b> 10<br><b>Nombre d'offres d'emploi :<\/b> 22","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,29,111,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,29,111,1)"}},"hoveron":"points","name":"axa","legendgroup":"axa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.77815125038364363],"y":[0],"text":"<b>Entreprise :<\/b> balenciaga<br><b>Nombre de brevets :<\/b> 6<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,32,113,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,32,113,1)"}},"hoveron":"points","name":"balenciaga","legendgroup":"balenciaga","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6020599913279623],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> banque de france<br><b>Nombre de brevets :<\/b> 40<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,36,116,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,36,116,1)"}},"hoveron":"points","name":"banque de france","legendgroup":"banque de france","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.1139433523068367],"y":[0],"text":"<b>Entreprise :<\/b> bayard<br><b>Nombre de brevets :<\/b> 13<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,38,119,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,38,119,1)"}},"hoveron":"points","name":"bayard","legendgroup":"bayard","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.77815125038364363],"y":[0],"text":"<b>Entreprise :<\/b> bayer<br><b>Nombre de brevets :<\/b> 6<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(72,41,122,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(72,41,122,1)"}},"hoveron":"points","name":"bayer","legendgroup":"bayer","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1],"y":[0],"text":"<b>Entreprise :<\/b> bci<br><b>Nombre de brevets :<\/b> 10<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(71,45,123,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(71,45,123,1)"}},"hoveron":"points","name":"bci","legendgroup":"bci","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.0827853703164503],"y":[0.90308998699194354],"text":"<b>Entreprise :<\/b> bouygues<br><b>Nombre de brevets :<\/b> 121<br><b>Nombre d'offres d'emploi :<\/b> 8","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(71,47,125,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(71,47,125,1)"}},"hoveron":"points","name":"bouygues","legendgroup":"bouygues","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.5314789170422551],"y":[0.69897000433601886],"text":"<b>Entreprise :<\/b> brgm<br><b>Nombre de brevets :<\/b> 34<br><b>Nombre d'offres d'emploi :<\/b> 5","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(70,51,127,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(70,51,127,1)"}},"hoveron":"points","name":"brgm","legendgroup":"brgm","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.3010299956639812],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> cardiologs<br><b>Nombre de brevets :<\/b> 2<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(69,53,129,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(69,53,129,1)"}},"hoveron":"points","name":"cardiologs","legendgroup":"cardiologs","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.95424250943932487],"y":[1.3222192947339193],"text":"<b>Entreprise :<\/b> carrefour<br><b>Nombre de brevets :<\/b> 9<br><b>Nombre d'offres d'emploi :<\/b> 21","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(68,57,131,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(68,57,131,1)"}},"hoveron":"points","name":"carrefour","legendgroup":"carrefour","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.1003705451175629],"y":[0],"text":"<b>Entreprise :<\/b> cea<br><b>Nombre de brevets :<\/b> 126<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(68,59,132,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(68,59,132,1)"}},"hoveron":"points","name":"cea","legendgroup":"cea","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.5465426634781312],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> chanel<br><b>Nombre de brevets :<\/b> 352<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(66,63,133,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(66,63,133,1)"}},"hoveron":"points","name":"chanel","legendgroup":"chanel","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[0],"text":"<b>Entreprise :<\/b> chru de brest<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(66,65,134,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(66,65,134,1)"}},"hoveron":"points","name":"chru de brest","legendgroup":"chru de brest","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.2648178230095364],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> cnrs<br><b>Nombre de brevets :<\/b> 184<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(65,69,135,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(65,69,135,1)"}},"hoveron":"points","name":"cnrs","legendgroup":"cnrs","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.173186268412274],"y":[0],"text":"<b>Entreprise :<\/b> colas<br><b>Nombre de brevets :<\/b> 149<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(63,71,136,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(63,71,136,1)"}},"hoveron":"points","name":"colas","legendgroup":"colas","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.5910646070264991],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> continental<br><b>Nombre de brevets :<\/b> 39<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(62,73,137,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(62,73,137,1)"}},"hoveron":"points","name":"continental","legendgroup":"continental","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.69897000433601886],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> criteo<br><b>Nombre de brevets :<\/b> 5<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(61,77,138,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(61,77,138,1)"}},"hoveron":"points","name":"criteo","legendgroup":"criteo","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.6740340004312548],"y":[1.3010299956639813],"text":"<b>Entreprise :<\/b> cs<br><b>Nombre de brevets :<\/b> 4721<br><b>Nombre d'offres d'emploi :<\/b> 20","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(60,79,138,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(60,79,138,1)"}},"hoveron":"points","name":"cs","legendgroup":"cs","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.69897000433601886],"y":[0],"text":"<b>Entreprise :<\/b> dalkia<br><b>Nombre de brevets :<\/b> 5<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(59,82,139,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(59,82,139,1)"}},"hoveron":"points","name":"dalkia","legendgroup":"dalkia","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.5888317255942073],"y":[0.69897000433601886],"text":"<b>Entreprise :<\/b> danone<br><b>Nombre de brevets :<\/b> 388<br><b>Nombre d'offres d'emploi :<\/b> 5","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(58,84,140,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(58,84,140,1)"}},"hoveron":"points","name":"danone","legendgroup":"danone","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.8432327780980096],"y":[1.0791812460476249],"text":"<b>Entreprise :<\/b> dassault<br><b>Nombre de brevets :<\/b> 697<br><b>Nombre d'offres d'emploi :<\/b> 12","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(56,87,140,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(56,87,140,1)"}},"hoveron":"points","name":"dassault","legendgroup":"dassault","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> demeter<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(55,90,140,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(55,90,140,1)"}},"hoveron":"points","name":"demeter","legendgroup":"demeter","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.9014583213961123],"y":[1.0413926851582251],"text":"<b>Entreprise :<\/b> descartes<br><b>Nombre de brevets :<\/b> 797<br><b>Nombre d'offres d'emploi :<\/b> 11","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(54,93,141,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(54,93,141,1)"}},"hoveron":"points","name":"descartes","legendgroup":"descartes","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6901960800285136],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> dior<br><b>Nombre de brevets :<\/b> 49<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(53,95,141,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(53,95,141,1)"}},"hoveron":"points","name":"dior","legendgroup":"dior","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6232492903979006],"y":[0.69897000433601886],"text":"<b>Entreprise :<\/b> edf<br><b>Nombre de brevets :<\/b> 42<br><b>Nombre d'offres d'emploi :<\/b> 5","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(52,97,141,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(52,97,141,1)"}},"hoveron":"points","name":"edf","legendgroup":"edf","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.4313637641589874],"y":[0],"text":"<b>Entreprise :<\/b> egis<br><b>Nombre de brevets :<\/b> 27<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(50,100,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(50,100,142,1)"}},"hoveron":"points","name":"egis","legendgroup":"egis","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2],"y":[0],"text":"<b>Entreprise :<\/b> elis<br><b>Nombre de brevets :<\/b> 100<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(49,102,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(49,102,142,1)"}},"hoveron":"points","name":"elis","legendgroup":"elis","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.5440680443502757],"y":[0],"text":"<b>Entreprise :<\/b> enedis<br><b>Nombre de brevets :<\/b> 35<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(48,105,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(48,105,142,1)"}},"hoveron":"points","name":"enedis","legendgroup":"enedis","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.2966651902615309],"y":[1.0413926851582251],"text":"<b>Entreprise :<\/b> engie<br><b>Nombre de brevets :<\/b> 198<br><b>Nombre d'offres d'emploi :<\/b> 11","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(47,107,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(47,107,142,1)"}},"hoveron":"points","name":"engie","legendgroup":"engie","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6020599913279623],"y":[0],"text":"<b>Entreprise :<\/b> eramet<br><b>Nombre de brevets :<\/b> 40<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(46,110,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(46,110,142,1)"}},"hoveron":"points","name":"eramet","legendgroup":"eramet","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.3010299956639813],"y":[0.6020599913279624],"text":"<b>Entreprise :<\/b> exotec<br><b>Nombre de brevets :<\/b> 20<br><b>Nombre d'offres d'emploi :<\/b> 4","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(45,112,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(45,112,142,1)"}},"hoveron":"points","name":"exotec","legendgroup":"exotec","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.8129133566428555],"y":[1.1139433523068367],"text":"<b>Entreprise :<\/b> free<br><b>Nombre de brevets :<\/b> 65<br><b>Nombre d'offres d'emploi :<\/b> 13","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(44,114,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(44,114,142,1)"}},"hoveron":"points","name":"free","legendgroup":"free","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.2988530764097068],"y":[0],"text":"<b>Entreprise :<\/b> gerflor<br><b>Nombre de brevets :<\/b> 199<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(43,116,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(43,116,142,1)"}},"hoveron":"points","name":"gerflor","legendgroup":"gerflor","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[0],"text":"<b>Entreprise :<\/b> gmbh<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(42,119,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(42,119,142,1)"}},"hoveron":"points","name":"gmbh","legendgroup":"gmbh","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.6222140229662951],"y":[0],"text":"<b>Entreprise :<\/b> hager<br><b>Nombre de brevets :<\/b> 419<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(41,121,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(41,121,142,1)"}},"hoveron":"points","name":"hager","legendgroup":"hager","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.6020599913279624],"y":[0],"text":"<b>Entreprise :<\/b> hauser<br><b>Nombre de brevets :<\/b> 4<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(41,123,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(41,123,142,1)"}},"hoveron":"points","name":"hauser","legendgroup":"hauser","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.8808135922807914],"y":[0],"text":"<b>Entreprise :<\/b> icm<br><b>Nombre de brevets :<\/b> 76<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(39,126,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(39,126,142,1)"}},"hoveron":"points","name":"icm","legendgroup":"icm","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.3802112417116059],"y":[0],"text":"<b>Entreprise :<\/b> imt<br><b>Nombre de brevets :<\/b> 24<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(39,128,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(39,128,142,1)"}},"hoveron":"points","name":"imt","legendgroup":"imt","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.95424250943932487],"y":[0],"text":"<b>Entreprise :<\/b> inex<br><b>Nombre de brevets :<\/b> 9<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(38,130,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(38,130,142,1)"}},"hoveron":"points","name":"inex","legendgroup":"inex","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.5132176000679389],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> inria<br><b>Nombre de brevets :<\/b> 326<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(37,132,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(37,132,142,1)"}},"hoveron":"points","name":"inria","legendgroup":"inria","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.3010299956639813],"y":[0],"text":"<b>Entreprise :<\/b> insight<br><b>Nombre de brevets :<\/b> 20<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(36,135,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(36,135,142,1)"}},"hoveron":"points","name":"insight","legendgroup":"insight","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.2787536009528289],"y":[0],"text":"<b>Entreprise :<\/b> institut du cerveau et de la moelle epiniere<br><b>Nombre de brevets :<\/b> 19<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(35,137,142,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(35,137,142,1)"}},"hoveron":"points","name":"institut du cerveau et de la moelle epiniere","legendgroup":"institut du cerveau et de la moelle epiniere","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.1398790864012365],"y":[0],"text":"<b>Entreprise :<\/b> ipsen<br><b>Nombre de brevets :<\/b> 138<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(34,140,141,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(34,140,141,1)"}},"hoveron":"points","name":"ipsen","legendgroup":"ipsen","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.9138138523837167],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> irt<br><b>Nombre de brevets :<\/b> 82<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(33,142,141,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(33,142,141,1)"}},"hoveron":"points","name":"irt","legendgroup":"irt","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.6020599913279624],"y":[0],"text":"<b>Entreprise :<\/b> ivalua<br><b>Nombre de brevets :<\/b> 4<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(33,144,140,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(33,144,140,1)"}},"hoveron":"points","name":"ivalua","legendgroup":"ivalua","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.954242509439325],"y":[0.77815125038364363],"text":"<b>Entreprise :<\/b> jcdecaux<br><b>Nombre de brevets :<\/b> 90<br><b>Nombre d'offres d'emploi :<\/b> 6","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(32,146,140,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(32,146,140,1)"}},"hoveron":"points","name":"jcdecaux","legendgroup":"jcdecaux","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.6020599913279624],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> kyriba<br><b>Nombre de brevets :<\/b> 4<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(31,148,140,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(31,148,140,1)"}},"hoveron":"points","name":"kyriba","legendgroup":"kyriba","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.0413926851582251],"y":[0.84509804001425681],"text":"<b>Entreprise :<\/b> la poste<br><b>Nombre de brevets :<\/b> 11<br><b>Nombre d'offres d'emploi :<\/b> 7","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(31,151,139,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(31,151,139,1)"}},"hoveron":"points","name":"la poste","legendgroup":"la poste","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.47712125471966244],"y":[0],"text":"<b>Entreprise :<\/b> lacoste<br><b>Nombre de brevets :<\/b> 3<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(31,153,138,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(31,153,138,1)"}},"hoveron":"points","name":"lacoste","legendgroup":"lacoste","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.3010299956639812],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> lafayette<br><b>Nombre de brevets :<\/b> 2<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(30,156,137,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(30,156,137,1)"}},"hoveron":"points","name":"lafayette","legendgroup":"lafayette","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6627578316815741],"y":[0],"text":"<b>Entreprise :<\/b> latecoere<br><b>Nombre de brevets :<\/b> 46<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(31,158,137,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(31,158,137,1)"}},"hoveron":"points","name":"latecoere","legendgroup":"latecoere","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.3010299956639812],"y":[0],"text":"<b>Entreprise :<\/b> lefebvre<br><b>Nombre de brevets :<\/b> 2<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(31,161,136,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(31,161,136,1)"}},"hoveron":"points","name":"lefebvre","legendgroup":"lefebvre","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.3117538610557542],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> lesaffre<br><b>Nombre de brevets :<\/b> 205<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(31,162,135,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(31,162,135,1)"}},"hoveron":"points","name":"lesaffre","legendgroup":"lesaffre","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.3031960574204891],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> liebherr<br><b>Nombre de brevets :<\/b> 201<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(33,165,133,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(33,165,133,1)"}},"hoveron":"points","name":"liebherr","legendgroup":"liebherr","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6901960800285136],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> limagrain<br><b>Nombre de brevets :<\/b> 49<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(34,167,133,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(34,167,133,1)"}},"hoveron":"points","name":"limagrain","legendgroup":"limagrain","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.6232492903979003],"y":[0.90308998699194354],"text":"<b>Entreprise :<\/b> liquide<br><b>Nombre de brevets :<\/b> 4200<br><b>Nombre d'offres d'emploi :<\/b> 8","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(35,169,131,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(35,169,131,1)"}},"hoveron":"points","name":"liquide","legendgroup":"liquide","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.3031960574204891],"y":[0],"text":"<b>Entreprise :<\/b> mbda<br><b>Nombre de brevets :<\/b> 201<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(37,172,130,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(37,172,130,1)"}},"hoveron":"points","name":"mbda","legendgroup":"mbda","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.8559429462323158],"y":[0.69897000433601886],"text":"<b>Entreprise :<\/b> michelin<br><b>Nombre de brevets :<\/b> 7177<br><b>Nombre d'offres d'emploi :<\/b> 5","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(39,173,129,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(39,173,129,1)"}},"hoveron":"points","name":"michelin","legendgroup":"michelin","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.1922886125681202],"y":[1.0413926851582251],"text":"<b>Entreprise :<\/b> nova<br><b>Nombre de brevets :<\/b> 1557<br><b>Nombre d'offres d'emploi :<\/b> 11","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(42,176,127,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(42,176,127,1)"}},"hoveron":"points","name":"nova","legendgroup":"nova","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.69897000433601886],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> octopus<br><b>Nombre de brevets :<\/b> 5<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(45,178,125,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(45,178,125,1)"}},"hoveron":"points","name":"octopus","legendgroup":"octopus","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.5747255835940734],"y":[0.84509804001425681],"text":"<b>Entreprise :<\/b> orange<br><b>Nombre de brevets :<\/b> 3756<br><b>Nombre d'offres d'emploi :<\/b> 7","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(49,181,123,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(49,181,123,1)"}},"hoveron":"points","name":"orange","legendgroup":"orange","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.2944662261615929],"y":[1],"text":"<b>Entreprise :<\/b> orano<br><b>Nombre de brevets :<\/b> 197<br><b>Nombre d'offres d'emploi :<\/b> 10","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(52,182,121,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(52,182,121,1)"}},"hoveron":"points","name":"orano","legendgroup":"orano","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.3802112417116059],"y":[1.6627578316815741],"text":"<b>Entreprise :<\/b> ortec<br><b>Nombre de brevets :<\/b> 24<br><b>Nombre d'offres d'emploi :<\/b> 46","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(56,185,119,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(56,185,119,1)"}},"hoveron":"points","name":"ortec","legendgroup":"ortec","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> orthogrid<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(59,187,117,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(59,187,117,1)"}},"hoveron":"points","name":"orthogrid","legendgroup":"orthogrid","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.7481880270062005],"y":[0.95424250943932487],"text":"<b>Entreprise :<\/b> pernod<br><b>Nombre de brevets :<\/b> 56<br><b>Nombre d'offres d'emploi :<\/b> 9","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(64,188,114,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(64,188,114,1)"}},"hoveron":"points","name":"pernod","legendgroup":"pernod","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.5933968423002067],"y":[0.6020599913279624],"text":"<b>Entreprise :<\/b> psa<br><b>Nombre de brevets :<\/b> 3921<br><b>Nombre d'offres d'emploi :<\/b> 4","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(68,191,112,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(68,191,112,1)"}},"hoveron":"points","name":"psa","legendgroup":"psa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.69897000433601886],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> quantum<br><b>Nombre de brevets :<\/b> 5<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(73,193,110,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(73,193,110,1)"}},"hoveron":"points","name":"quantum","legendgroup":"quantum","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.7883805153195631],"y":[0.84509804001425681],"text":"<b>Entreprise :<\/b> renault<br><b>Nombre de brevets :<\/b> 6143<br><b>Nombre d'offres d'emploi :<\/b> 7","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(78,195,107,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(78,195,107,1)"}},"hoveron":"points","name":"renault","legendgroup":"renault","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.69897000433601886],"y":[0],"text":"<b>Entreprise :<\/b> roullier<br><b>Nombre de brevets :<\/b> 5<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(83,197,105,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(83,197,105,1)"}},"hoveron":"points","name":"roullier","legendgroup":"roullier","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.69897000433601886],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> ryole<br><b>Nombre de brevets :<\/b> 5<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(88,199,101,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(88,199,101,1)"}},"hoveron":"points","name":"ryole","legendgroup":"ryole","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.9149246482051483],"y":[1.3617278360175928],"text":"<b>Entreprise :<\/b> safran<br><b>Nombre de brevets :<\/b> 8221<br><b>Nombre d'offres d'emploi :<\/b> 23","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(93,200,99,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(93,200,99,1)"}},"hoveron":"points","name":"safran","legendgroup":"safran","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.6702458530741242],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> salomon<br><b>Nombre de brevets :<\/b> 468<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(98,203,95,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(98,203,95,1)"}},"hoveron":"points","name":"salomon","legendgroup":"salomon","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.533136288278639],"y":[0.84509804001425681],"text":"<b>Entreprise :<\/b> sanofi<br><b>Nombre de brevets :<\/b> 3413<br><b>Nombre d'offres d'emploi :<\/b> 7","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(103,204,92,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(103,204,92,1)"}},"hoveron":"points","name":"sanofi","legendgroup":"sanofi","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.2787536009528289],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> saur<br><b>Nombre de brevets :<\/b> 19<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(109,206,89,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(109,206,89,1)"}},"hoveron":"points","name":"saur","legendgroup":"saur","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.4578818967339924],"y":[0.69897000433601886],"text":"<b>Entreprise :<\/b> schneider<br><b>Nombre de brevets :<\/b> 2870<br><b>Nombre d'offres d'emploi :<\/b> 5","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(115,208,86,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(115,208,86,1)"}},"hoveron":"points","name":"schneider","legendgroup":"schneider","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.3730959870787269],"y":[0.3010299956639812],"text":"<b>Entreprise :<\/b> seb<br><b>Nombre de brevets :<\/b> 2361<br><b>Nombre d'offres d'emploi :<\/b> 2","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(121,209,82,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(121,209,82,1)"}},"hoveron":"points","name":"seb","legendgroup":"seb","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.3222192947339193],"y":[0.6020599913279624],"text":"<b>Entreprise :<\/b> segula<br><b>Nombre de brevets :<\/b> 21<br><b>Nombre d'offres d'emploi :<\/b> 4","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(127,211,78,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(127,211,78,1)"}},"hoveron":"points","name":"segula","legendgroup":"segula","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.1613680022349748],"y":[0],"text":"<b>Entreprise :<\/b> sercel<br><b>Nombre de brevets :<\/b> 145<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(133,213,74,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(133,213,74,1)"}},"hoveron":"points","name":"sercel","legendgroup":"sercel","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.6693168805661123],"y":[0],"text":"<b>Entreprise :<\/b> servier<br><b>Nombre de brevets :<\/b> 467<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(139,214,70,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(139,214,70,1)"}},"hoveron":"points","name":"servier","legendgroup":"servier","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.414973347970818],"y":[0.77815125038364363],"text":"<b>Entreprise :<\/b> sfr<br><b>Nombre de brevets :<\/b> 26<br><b>Nombre d'offres d'emploi :<\/b> 6","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(145,215,66,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(145,215,66,1)"}},"hoveron":"points","name":"sfr","legendgroup":"sfr","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[0],"text":"<b>Entreprise :<\/b> sim&cure<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(151,216,63,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(151,216,63,1)"}},"hoveron":"points","name":"sim&cure","legendgroup":"sim&cure","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.5490032620257876],"y":[0.77815125038364363],"text":"<b>Entreprise :<\/b> sncf<br><b>Nombre de brevets :<\/b> 354<br><b>Nombre d'offres d'emploi :<\/b> 6","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(158,217,59,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(158,217,59,1)"}},"hoveron":"points","name":"sncf","legendgroup":"sncf","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.7708520116421442],"y":[0],"text":"<b>Entreprise :<\/b> socomec<br><b>Nombre de brevets :<\/b> 59<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(164,219,54,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(164,219,54,1)"}},"hoveron":"points","name":"socomec","legendgroup":"socomec","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[1.6434526764861874],"text":"<b>Entreprise :<\/b> sodexo<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 44","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(170,220,50,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(170,220,50,1)"}},"hoveron":"points","name":"sodexo","legendgroup":"sodexo","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.8633228601204559],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> somfy<br><b>Nombre de brevets :<\/b> 730<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(177,221,46,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(177,221,46,1)"}},"hoveron":"points","name":"somfy","legendgroup":"somfy","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.8014037100173552],"y":[1],"text":"<b>Entreprise :<\/b> suez<br><b>Nombre de brevets :<\/b> 633<br><b>Nombre d'offres d'emploi :<\/b> 10","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(184,222,41,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(184,222,41,1)"}},"hoveron":"points","name":"suez","legendgroup":"suez","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.90308998699194354],"y":[0],"text":"<b>Entreprise :<\/b> synergie<br><b>Nombre de brevets :<\/b> 8<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(191,223,37,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(191,223,37,1)"}},"hoveron":"points","name":"synergie","legendgroup":"synergie","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0],"y":[0],"text":"<b>Entreprise :<\/b> terrena<br><b>Nombre de brevets :<\/b> 1<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(197,224,33,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(197,224,33,1)"}},"hoveron":"points","name":"terrena","legendgroup":"terrena","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.7870351820262234],"y":[0.77815125038364363],"text":"<b>Entreprise :<\/b> thales<br><b>Nombre de brevets :<\/b> 6124<br><b>Nombre d'offres d'emploi :<\/b> 6","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(203,225,30,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(203,225,30,1)"}},"hoveron":"points","name":"thales","legendgroup":"thales","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.6020599913279624],"y":[0.47712125471966244],"text":"<b>Entreprise :<\/b> ubisoft<br><b>Nombre de brevets :<\/b> 4<br><b>Nombre d'offres d'emploi :<\/b> 3","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(210,226,27,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(210,226,27,1)"}},"hoveron":"points","name":"ubisoft","legendgroup":"ubisoft","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.0115704435972783],"y":[0],"text":"<b>Entreprise :<\/b> universite de montpellier<br><b>Nombre de brevets :<\/b> 1027<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(217,226,25,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(217,226,25,1)"}},"hoveron":"points","name":"universite de montpellier","legendgroup":"universite de montpellier","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.8692317197309762],"y":[0],"text":"<b>Entreprise :<\/b> universite de nantes<br><b>Nombre de brevets :<\/b> 740<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(222,227,24,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(222,227,24,1)"}},"hoveron":"points","name":"universite de nantes","legendgroup":"universite de nantes","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.0050088206723675],"y":[0.6020599913279624],"text":"<b>Entreprise :<\/b> valeo<br><b>Nombre de brevets :<\/b> 10116<br><b>Nombre d'offres d'emploi :<\/b> 4","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(229,228,25,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(229,228,25,1)"}},"hoveron":"points","name":"valeo","legendgroup":"valeo","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.1139433523068367],"y":[0],"text":"<b>Entreprise :<\/b> vetoquinol<br><b>Nombre de brevets :<\/b> 13<br><b>Nombre d'offres d'emploi :<\/b> 1","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(235,229,27,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(235,229,27,1)"}},"hoveron":"points","name":"vetoquinol","legendgroup":"vetoquinol","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.6434526764861874],"y":[0.77815125038364363],"text":"<b>Entreprise :<\/b> vinci<br><b>Nombre de brevets :<\/b> 44<br><b>Nombre d'offres d'emploi :<\/b> 6","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(241,229,29,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(241,229,29,1)"}},"hoveron":"points","name":"vinci","legendgroup":"vinci","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.90308998699194354],"y":[0.69897000433601886],"text":"<b>Entreprise :<\/b> volvo<br><b>Nombre de brevets :<\/b> 8<br><b>Nombre d'offres d'emploi :<\/b> 5","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(247,230,33,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(247,230,33,1)"}},"hoveron":"points","name":"volvo","legendgroup":"volvo","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.1367205671564067],"y":[0.6020599913279624],"text":"<b>Entreprise :<\/b> withings<br><b>Nombre de brevets :<\/b> 137<br><b>Nombre d'offres d'emploi :<\/b> 4","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(253,231,37,1)","opacity":0.90000000000000002,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(253,231,37,1)"}},"hoveron":"points","name":"withings","legendgroup":"withings","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":25.298464092984645,"r":6.6417600664176026,"b":36.529680365296812,"l":33.872976338729771},"font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835205},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.20025044103361839,4.2052592617059856],"tickmode":"array","ticktext":["1","10","100","1000","10000"],"tickvals":[0,1,2,3,3.9999999999999996],"categoryorder":"array","categoryarray":["1","10","100","1000","10000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.3208800332088013,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":10.62681610626816},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(229,229,229,1)","gridwidth":0.60379636967432737,"zeroline":false,"anchor":"y","title":{"text":"<b> Nombre de brevets (échelle log <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835205}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.083137891584078707,1.7458957232656529],"tickmode":"array","ticktext":["1","3","10","30"],"tickvals":[0,0.47712125471966249,1,1.4771212547196624],"categoryorder":"array","categoryarray":["1","3","10","30"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.3208800332088013,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":10.62681610626816},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(229,229,229,1)","gridwidth":0.60379636967432737,"zeroline":false,"anchor":"x","title":{"text":"<b> Nombre d'offres d'emploi (échelle log) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":13.283520132835205}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":10.62681610626816}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"55e26b25622":{"x":{},"y":{},"colour":{},"text":{},"type":"scatter"}},"cur_data":"55e26b25622","visdat":{"55e26b25622":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="justify">
+<p>Dans le graphique ci-dessus, représentant la relation entre l’innovation, mesurée par le nombre de brevets déposés par les entreprises et le nombre d’offres d’emploi qu’elles proposent, il apparaît qu’il n’y a pas de tendance linéaire évidente ou de relation forte entre ces deux variables. En effet, certains secteurs peuvent être plus orientés vers l’innovation technologique sans pour autant créer un grand nombre de nouveaux postes, tandis que d’autres industries, moins focalisées sur l’innovation, peuvent générer une offre d’emploi plus importante. Cela suggère que, dans l’échantillon étudié, les dépôts de brevets et les offres d’emploi semblent être influencés par des facteurs indépendants.</p>
+</div>
+<section id="figure-3-matrice-de-corrélation" class="level4 justify">
+<h4 class="anchored" data-anchor-id="figure-3-matrice-de-corrélation">Figure 3 : Matrice de corrélation</h4>
+</section>
+<div class="justify">
+<p>La matrice de corrélation suivante illustre les relations entre les principales variables de notre étude : le nombre d’offres d’emploi, le nombre de brevets déposés et le salaire moyen.</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="donnees_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="justify">
+<p>La matrice de corrélation indique que la relation entre le nombre d’offres d’emploi et le salaire moyen est négativement corrélée à -0,28, suggérant qu’il existe une faible tendance inverse entre ces deux variables. En d’autres termes, une augmentation des offres d’emploi pourrait être associée à une légère baisse des salaires, bien que cette relation soit faible.</p>
+<p>De plus, la corrélation entre le nombre de brevets et le salaire moyen est également négative, à -0,36, ce qui suggère qu’une plus grande activité d’innovation dans les entreprises pourrait être liée à des salaires moyens plus faibles. Cependant, cette corrélation reste modérée et indique que d’autres facteurs peuvent influencer cette dynamique.</p>
+</div>
+<hr>
+<section id="ii-carte-interactive-des-brevets-et-offres-demploi-émis-par-departement" class="level2 justify">
+<h2 class="anchored" data-anchor-id="ii-carte-interactive-des-brevets-et-offres-demploi-émis-par-departement">II) Carte interactive des brevets et offres d’emploi émis par departement</h2>
+</section>
+<section id="iii-analyse-des-compétences-requises-au-croisement-des-salaires-et-de-linnovation" class="level2 justify">
+<h2 class="anchored" data-anchor-id="iii-analyse-des-compétences-requises-au-croisement-des-salaires-et-de-linnovation">III) Analyse des Compétences Requises au Croisement des Salaires et de l’Innovation</h2>
+<section id="figure-4-nuage-de-mots-des-compétences-requises-pondérées-par-les-salaires-proposés" class="level4">
+<h4 class="anchored" data-anchor-id="figure-4-nuage-de-mots-des-compétences-requises-pondérées-par-les-salaires-proposés">Figure 4 : Nuage de mots des compétences requises pondérées par les salaires proposés</h4>
+</section>
+</section>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="donnees_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="justify">
+<p>Ce nuage de mots présente une vue d’ensemble des priorités actuelles des entreprises en matière de recrutement, en mettant en lumière les compétences les plus recherchées et valorisées, notamment en termes de rémunération. Parmi les éléments clés, l’esprit d’équipe, la collaboration, la maîtrise de logiciels tels que Python et Excel, ainsi que la maîtrise de l’anglais, apparaissent comme les principales attentes des employeurs.</p>
+<p>Pour les candidats, cette analyse met en lumière la nécessité de combiner des compétences techniques spécifiques, comme la programmation en Python, avec des aptitudes comportementales telles que la collaboration et l’esprit d’équipe, ainsi qu’une maîtrise de l’anglais pour s’adapter à un environnement professionnel globalisé. Se démarquer sur le marché du travail implique donc de développer ce mélange harmonieux de savoir-faire et de savoir-être, devenu indispensable dans le monde professionnel actuel.</p>
+</div>
+<section id="figure-5-nuage-de-mots-des-compétences-requises-pondérées-par-les-brevets-déposés" class="level4 justify">
+<h4 class="anchored" data-anchor-id="figure-5-nuage-de-mots-des-compétences-requises-pondérées-par-les-brevets-déposés">Figure 5 : Nuage de mots des compétences requises pondérées par les brevets déposés</h4>
+</section>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="donnees_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="justify">
+<p>Ce nuage de mots offre une analyse des compétences les plus fréquemment associées au dépôt de brevets, mettant en lumière les aptitudes qui soutiennent l’innovation et la propriété intellectuelle. Les compétences les plus représentées, telles que l’esprit d’équipe et l’autonomie ainsi que la maîtrise du logiciel Excel, de l’anglais, et de l’intelligence artificielle, reflètent les piliers du travail de recherche et développement dans les entreprises.</p>
+<p>Bien que moins fréquente dans le nuage, cette compétence associée à l’intelligence artificielle illustre une tendance majeure de l’innovation contemporaine. En effet, l’intelligence artificielle est un domaine en pleine croissance, où le dépôt de brevets est particulièrement dynamique, soulignant son rôle stratégique dans les technologies de demain.</p>
+<p>Ce nuage de mots met en lumière un équilibre entre compétences techniques, relationnelles, et comportementales nécessaires à l’innovation. La prééminence de la collaboration au sein d’une équipe, associée à des outils techniques, souligne que l’innovation repose autant sur des interactions collectives que sur des compétences techniques spécifiques. L’anglais et l’intelligence artificielle, quant à eux, traduisent l’enjeu global et technologique des inventions actuelles.</p>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
