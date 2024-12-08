@@ -163,6 +163,74 @@ De plus, la corrélation entre le nombre de brevets et le salaire moyen est éga
 :::
 
 ::: {.justify}
+Cette carte interactive présente une vue géographique de la France, en détaillant deux indicateurs importants par département :
+
+-   **Le nombre de brevets** : Ce chiffre reflète l'innovation et la protection de la propriété intellectuelle entre 2010 et 2020 dans chaque département.
+
+-   **Le nombre d'offres d'emploi** : Ce nombre indique la quantité d'opportunités professionnelles disponibles dans chaque département. Les offres d'emploi sont un indicateur clé de la dynamique du marché du travail, montrant les secteurs qui recrutent activement dans chaque département.
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
+library(sf)
+library(readr)
+df1 = read_csv("CSV/departements_resume.csv")
+dpt=sf::st_read("CSV/departements-20180101.shp")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(leaflet)
+library(sf)
+library(dplyr)
+library(tidyr)
+library(htmltools)
+df1 = df1 %>%
+  rename(code_insee = addr_dept_main)
+merged89 = merge(dpt, df1, by = "code_insee", all.x = TRUE)
+merged89$Total_patents[merged89$nom == "Paris"] = 105557
+merged89$Total_patents[merged89$nom == "Rhône"] = 13608
+merged89$Total_offres[merged89$nom == "Rhône"] = 62
+popup89 = paste(
+  "<b>Département :</b>", merged89$nom, "<br>",
+  "<b>Nombre de brevets :</b>", merged89$Total_patents, "<br>",
+  "<b>Nombre d'offres total :</b>", merged89$Total_offres
+)
+
+merged89BinsBrevets = c(0, 500, 1000, 2000, 5000, 10000, 100000, 110000)
+merged89PalPatents = colorBin(palette = "magma", domain = merged89$Total_patents, bins = merged89BinsBrevets, reverse = TRUE)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(leaflet)
+library(leaflet.extras)
+library(htmltools)
+
+leaflet() %>%
+  addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Carte - standard") %>%
+  addPolygons(data = merged89, color = 'black',
+              opacity = 1,
+              weight = 0.5,
+              fillColor = ~merged89PalPatents(Total_patents),
+              fillOpacity = 0.8,
+              label = lapply(popup89, htmltools::HTML),
+              highlightOptions = highlightOptions(color = "#E2068A",
+                                                  weight = 1.5,
+                                                  bringToFront = TRUE,
+                                                  fillOpacity = 0.5),
+              labelOptions = labelOptions(noHide = F),
+              group = "Nombre de Brevets") %>%
+  
+  addLegend("bottomright", opacity = 1,
+            colors = c("#fcfdbf", "#feb078", "#f1605d", "#b73779",
+                       "#721f81", "#2c115f", "#000004"),
+            title = "Nombre de brevets par région",
+            labels = c("<500", "500-1000", "1000-2000", "2000-5000",
+                       "5000-10000", "10000-100000", "100000-110000"),
+            group = "Nombre de Brevets") %>%
+  
+  setView(lng = 2.80, lat = 46.80, zoom = 5)
+```
+
+::: {.justify}
 ## III) Analyse des Compétences Requises au Croisement des Salaires et de l'Innovation
 
 #### Figure 4 : Nuage de mots des compétences requises pondérées par les salaires proposés
